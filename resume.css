@@ -146,7 +146,7 @@ figure {
       border: 0px;
       text-align: center;
       position: relative;
-      background: url("graph_sprite.png") -75px 0px no-repeat; }
+      background: url("bar.svg") no-repeat; }
       figure > div .beginner.alt {
         height: 115px; }
         figure > div .beginner.alt div {
@@ -160,7 +160,7 @@ figure {
       border: 0px;
       text-align: center;
       position: relative;
-      background: url("graph_sprite.png") -50px 0px no-repeat; }
+      background: url("bar.svg") no-repeat; }
       figure > div .intermediate.alt {
         height: 115px; }
         figure > div .intermediate.alt div {
@@ -174,7 +174,7 @@ figure {
       border: 0px;
       text-align: center;
       position: relative;
-      background: url("graph_sprite.png") -25px 0px no-repeat; }
+      background: url("bar.svg") no-repeat; }
       figure > div .advanced.alt {
         height: 115px; }
         figure > div .advanced.alt div {
@@ -188,7 +188,7 @@ figure {
       border: 0px;
       text-align: center;
       position: relative;
-      background: url("graph_sprite.png") 0px 0px no-repeat; }
+      background: url("bar.svg") no-repeat; }
       figure > div .expert.alt {
         height: 115px; }
         figure > div .expert.alt div {
