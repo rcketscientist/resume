@@ -140,7 +140,7 @@ figure {
         figure > div.technical .bar .graph-header.dark {
           border-right: 15px solid #c1e31a; }
     figure > div .beginner {
-      height: 98px;
+      height: 24px;
       width: 8px;
       margin: 0 auto;
       border: 0px;
@@ -154,7 +154,7 @@ figure {
           bottom: 0px;
           left: 3px; }
     figure > div .intermediate {
-      height: 98px;
+      height: 48px;
       width: 8px;
       margin: 0 auto;
       border: 0px;
@@ -168,7 +168,7 @@ figure {
           bottom: 0px;
           left: 3px; }
     figure > div .advanced {
-      height: 98px;
+      height: 72px;
       width: 8px;
       margin: 0 auto;
       border: 0px;
@@ -182,7 +182,7 @@ figure {
           bottom: 0px;
           left: 3px; }
     figure > div .expert {
-      height: 98px;
+      height: 96px;
       width: 8px;
       margin: 0 auto;
       border: 0px;
