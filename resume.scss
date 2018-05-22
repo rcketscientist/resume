@@ -1,11 +1,13 @@
 $barHeight: 81px;
 $barWidth: 8px;
 $bottomBuffer: 10px;
+$headerHeight: 18px;
+$masterySpacing: 17px;
 
-$beginnerHeight: 20px;
-$intermediateHeight: 35px;
-$advancedHeight: 50px;
-$expertHeight: 65px;
+$expertHeight: 70px;
+$advancedHeight:        $expertHeight - $masterySpacing;
+$intermediateHeight:    $advancedHeight - $masterySpacing;
+$beginnerHeight:        $intermediateHeight - $masterySpacing;
 
 $totalSkills: 19;
 $frontSkills: 5;
@@ -23,6 +25,13 @@ $techBarRatio: (100 / $techSkills)+'%';
 
 body {
     margin: 5%;
+}
+
+line {
+    width: 100%; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
+    line-height: 0.1em;
+    align-self: center;
 }
 
 .Heading {
@@ -86,17 +95,24 @@ body {
     font-size: 12pt;
 }
 
-.skills {
-    float: left;
-    text-align: left;
+.skillSection {
+    display: flex;
+    flex-direction: row;
 }
 
-.skills ul {
+.mastery {
+    width: 100%;
+    float: left;
+    text-align: left;
+    position: relative;
+}
+
+.mastery ul {
     padding: 0px;
     margin: 20px 0 0 0;
 }
 
-.skills ul li {
+.mastery ul li {
     list-style-type: none;
     text-align: right;
     height: 17px;
@@ -109,68 +125,78 @@ body {
     background: url("/images/about/dash.jpg") no-repeat 100% 50%;
 }
 
-@media (max-width: 991px) {
-    .skills ul li {
-        font-size: 10px;
-    }
-}
+// @media (max-width: 991px) {
+//     .skills ul li {
+//         font-size: 10px;
+//     }
+// }
+
+// @media (max-width: 767px) {
+//     figure {
+//         flex-direction: column;
+//     }
+// }
+
+// @media (max-width: 767px) {
+//     figure>div {
+//         height: auto;
+//         width: 100%;
+//     }
+// }
 
 figure {
+    @mixin skillGroup {
+        display: flex;
+        margin-top: 25px;
+        font-size: 12px;
+        position: relative;
+    }
+
     margin: 0px auto;
     display: flex;
-    flex-direction: row;
+    // flex-direction: row;
     justify-content: center;
     flex-wrap: nowrap;
     align-content: center;
     align-items: flex-start;
-}
 
-@media (max-width: 767px) {
-    figure {
-        flex-direction: column;
+    .skill {
+        width: $skillRatio;
     }
-}
 
-figure p {
-    position: absolute;
-    top: 75px;
-    width: 100%;
-    text-align: center;
-    font-family: Calibri;
-    color: #fff;
-    font-size: 12px;
-    z-index: 100;
-    padding: 0px;
-    margin: 0px;
-}
+    .graph-header {
+        position: absolute;
+        top: 73px;
+        height: $headerHeight;
+        left: 0px;
+        right: 0px;
+    }
 
-figure .bar {
-    height: $barHeight;
-    width: $barWidth;
-    background: url("bar.svg") no-repeat;
-    background-origin: content-box; // vertical-align: top;
-    // font-style: italic;
-    font-size: 11px; // text-align: end;
-    z-index: 300;
-}
+    p {
+        position: absolute;
+        top: 75px;
+        width: 100%;
+        text-align: center;
+        font-family: Calibri;
+        color: #fff;
+        font-size: 12px;
+        z-index: 100;
+        padding: 0px;
+        margin: 0px;
+    }
 
-.graph-header {
-    position: absolute;
-    top: 73px;
-    height: 18px;
-    left: 0px;
-    right: 0px;
-}
-
-.skill {
-  width: $skillRatio;
-}
-
-figure {
-    & .bar {
+    .bar {
+        height: $barHeight;
+        width: $barWidth;
+        background: url("bar.svg") no-repeat;
+        background-origin: content-box;
+        font-size: 11px;
+        z-index: 300;
         margin-bottom: 25px;
     }
-    &>div.frontend {
+    
+    .frontend {
+        @include skillGroup;
         & .graph-header {
             background-color: #444444;
         }
@@ -178,7 +204,9 @@ figure {
             width: $frontBarRatio;
         }
     }
-    &>div.programming {
+    
+    .programming {
+        @include skillGroup;
         & .graph-header {
             background-color: #888888;
         }
@@ -186,7 +214,9 @@ figure {
             width: $codeBarRatio;
         }
     }
-    &>div.technical {
+    
+    .technical {
+        @include skillGroup;
         & .graph-header {
             background-color: #444444;
         }
@@ -194,6 +224,27 @@ figure {
             width: $techBarRatio;
         }
     }
+
+    .beginner {
+        padding-top: $barHeight - $beginnerHeight - $bottomBuffer;
+        background-size: $barWidth $beginnerHeight;
+    }
+    
+    .intermediate {
+        padding-top: $barHeight - $intermediateHeight - $bottomBuffer;
+        background-size: $barWidth $intermediateHeight;
+    }
+    
+    .advanced {
+        padding-top: $barHeight - $advancedHeight - $bottomBuffer;
+        background-size: $barWidth $advancedHeight;
+    }
+    
+    .expert {
+        padding-top: $barHeight - $expertHeight - $bottomBuffer;
+        background-size: $barWidth $expertHeight;
+    }
+
     & label {
         display: inline-block;
         transform: rotate(-75deg);
@@ -203,38 +254,4 @@ figure {
         align-self: flex-end;
         font-size: 10pt;
     }
-}
-
-figure>div {
-    display: flex;
-    margin-top: 25px;
-    font-size: 12px;
-    position: relative;
-}
-
-@media (max-width: 767px) {
-    figure>div {
-        height: auto;
-        width: 100%;
-    }
-}
-
-figure>div .beginner {
-    padding-top: $barHeight - $beginnerHeight - $bottomBuffer;
-    background-size: $barWidth $beginnerHeight;
-}
-
-figure>div .intermediate {
-    padding-top: $barHeight - $intermediateHeight - $bottomBuffer;
-    background-size: $barWidth $intermediateHeight;
-}
-
-figure>div .advanced {
-    padding-top: $barHeight - $advancedHeight - $bottomBuffer;
-    background-size: $barWidth $advancedHeight;
-}
-
-figure>div .expert {
-    padding-top: $barHeight - $expertHeight - $bottomBuffer;
-    background-size: $barWidth $expertHeight;
 }
