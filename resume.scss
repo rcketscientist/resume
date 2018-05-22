@@ -1,203 +1,240 @@
-$barHeight: 98px;
+$barHeight: 81px;
 $barWidth: 8px;
+$bottomBuffer: 10px;
+
 $beginnerHeight: 20px;
 $intermediateHeight: 35px;
 $advancedHeight: 50px;
 $expertHeight: 65px;
-$bottomBuffer: 30px;
 
-body {			
-  margin: 5%; 
+$totalSkills: 19;
+$frontSkills: 5;
+$codeSkills: 7;
+$techSkills: 7;
+
+$skillRatio: (100 / $totalSkills) + '%';
+$frontRatio: (($frontSkills / $totalSkills) * 100)+'%';
+$codeRatio: (($codeSkills / $totalSkills) * 100)+'%';
+$techRatio: (($techSkills / $totalSkills) * 100)+'%';
+
+$frontBarRatio: (100 / $frontSkills)+'%';
+$codeBarRatio: (100 / $codeSkills)+'%';
+$techBarRatio: (100 / $techSkills)+'%';
+
+body {
+    margin: 5%;
 }
+
 .Heading {
-	font-family: Calibri;
-	font-size: 14pt;
-	font-weight: bold;
-	border-bottom-style: double;
+    font-family: Calibri;
+    font-size: 14pt;
+    font-weight: bold;
+    border-bottom-style: double;
 }
+
 .TableHeading {
-	font-family: "Times New Roman", Times, serif;
+    font-family: "Times New Roman", Times, serif;
 }
+
 .HeadingLeft {
-	font-family: Garamond;
-	font-size: 26pt;
-	border-bottom-style: none;
-	border-top-style: none;
-	border-right-style: none;
-	border-left-style: none;
-	vertical-align: bottom;
-	text-align: left;
-	white-space: normal;
+    font-family: Garamond;
+    font-size: 26pt;
+    border-bottom-style: none;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    vertical-align: bottom;
+    text-align: left;
+    white-space: normal;
 }
+
 .HeavyRule {
-	border-bottom-style: solid;
-	border-bottom-width: thick;
-	border-bottom-color: #000;
-	font-family: Calibri;
-	font-weight: bold;
-	font-size: 12pt;
+    border-bottom-style: solid;
+    border-bottom-width: thick;
+    border-bottom-color: #000;
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 12pt;
 }
+
 .Skills {
-	font-family: Calibri;
-	font-size: 12pt;
+    font-family: Calibri;
+    font-size: 12pt;
 }
+
 .JobHeader {
-	font-family: Calibri;
-	font-size: 12pt;
-	font-weight: bold;
+    font-family: Calibri;
+    font-size: 12pt;
+    font-weight: bold;
 }
+
 .Schooling {
-	font-family: Calibri;
-	font-size: 12pt;
-	list-style-image: none;
-	list-style-type: none;
-	list-style-position: outside;
+    font-family: Calibri;
+    font-size: 12pt;
+    list-style-image: none;
+    list-style-type: none;
+    list-style-position: outside;
 }
+
 .RightHeading {
-	text-align: right;
+    text-align: right;
 }
+
 .RightHeading {
-	font-family: Garamond;
-	font-weight: bold;
-	font-size: 12pt;
+    font-family: Garamond;
+    font-weight: bold;
+    font-size: 12pt;
 }
+
 .skills {
-	float: left;
-	text-align: left; }
-	.skills ul {
-		padding: 0px;
-		margin: 20px 0 0 0; }
-		.skills ul li {
-		  list-style-type: none;
-		  text-align: right;
-		  height: 17px;
-		  margin: 0 10px 0 0;
-		  padding-right: 10px;
-		  font-style: italic;
-		  font-family: Georgia;
-		  font-weight: bold;
-		  font-size: 11px;
-		  background: url("/images/about/dash.jpg") no-repeat 100% 50%; }
-		  @media (max-width: 991px) {
-			.skills ul li {
-			  font-size: 10px; } 
-		  }
+    float: left;
+    text-align: left;
+}
+
+.skills ul {
+    padding: 0px;
+    margin: 20px 0 0 0;
+}
+
+.skills ul li {
+    list-style-type: none;
+    text-align: right;
+    height: 17px;
+    margin: 0 10px 0 0;
+    padding-right: 10px;
+    font-style: italic;
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 11px;
+    background: url("/images/about/dash.jpg") no-repeat 100% 50%;
+}
+
+@media (max-width: 991px) {
+    .skills ul li {
+        font-size: 10px;
+    }
+}
 
 figure {
-  margin: 0px auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: nowrap;
-  align-content: center;
-  align-items: flex-start; }
-  @media (max-width: 767px) {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: flex-start;
+}
+
+@media (max-width: 767px) {
     figure {
-      flex-direction: column; } }
-  figure p {
+        flex-direction: column;
+    }
+}
+
+figure p {
     position: absolute;
     top: 75px;
-    left: 0px;
     width: 100%;
     text-align: center;
-    font-family: "Archer-Book", Georgia, Serif;
+    font-family: Calibri;
     color: #fff;
-    font-size: 10px;
+    font-size: 12px;
     z-index: 100;
     padding: 0px;
-    margin: 0px; }
-  figure .bar {
-    display: table-cell;
-    vertical-align: top;
-    font-style: italic;
-    font-size: 11px;
-    text-align: center;
-    z-index: 300; }
-    figure .bar .graph-header {
-      position: absolute;
-      top: 73px;
-      height: 18px;
-      left: 0px;
-      right: 0px; }
-  figure > div {
+    margin: 0px;
+}
+
+figure .bar {
+    height: $barHeight;
+    width: $barWidth;
+    background: url("bar.svg") no-repeat;
+    background-origin: content-box; // vertical-align: top;
+    // font-style: italic;
+    font-size: 11px; // text-align: end;
+    z-index: 300;
+}
+
+.graph-header {
+    position: absolute;
+    top: 73px;
+    height: 18px;
+    left: 0px;
+    right: 0px;
+}
+
+.skill {
+  width: $skillRatio;
+}
+
+figure {
+    & .bar {
+        margin-bottom: 25px;
+    }
+    &>div.frontend {
+        & .graph-header {
+            background-color: #444444;
+        }
+        & .bar {
+            width: $frontBarRatio;
+        }
+    }
+    &>div.programming {
+        & .graph-header {
+            background-color: #888888;
+        }
+        & .bar {
+            width: $codeBarRatio;
+        }
+    }
+    &>div.technical {
+        & .graph-header {
+            background-color: #444444;
+        }
+        & .bar {
+            width: $techBarRatio;
+        }
+    }
+    & label {
+        display: inline-block;
+        transform: rotate(-75deg);
+        // transform-origin: right center;
+        white-space: nowrap;
+        font-family: Calibri;
+        align-self: flex-end;
+        font-size: 10pt;
+    }
+}
+
+figure>div {
+    display: flex;
     margin-top: 25px;
     font-size: 12px;
-    position: relative;	}
-    @media (max-width: 767px) {
-      figure > div {
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    figure>div {
         height: auto;
-        width: 100%; } }
-	figure > .bar {
-      margin-bottom: 25px; }
-    figure > div.frontend .bar {
-      width: 20%; }
-      figure > div.frontend .bar .graph-header {
-        background-color: #444444; }
-    figure > div.programming .bar {
-      width: 14%; }
-      figure > div.programming .bar .graph-header {
-        background-color: #888888; }
-    figure > div.technical .bar {
-      width: 12%; }
-      figure > div.technical .bar .graph-header {
-        background-color: #444444; }
-    figure > div .beginner {
-      height: $barHeight;
-      width: $barWidth;
-      padding-top: $barHeight - $beginnerHeight - $bottomBuffer;
-      text-align: center;
-      position: relative;
-      background: url("bar.svg") no-repeat;
-      background-size: $barWidth $beginnerHeight;
-      background-origin: content-box; }
-      figure > div .beginner.alt {
-        height: 115px; }
-        figure > div .beginner.alt div {
-          position: absolute;
-          bottom: 0px;
-          left: 3px; }
-    figure > div .intermediate {
-      height: $barHeight;
-      width: $barWidth;
-      padding-top: $barHeight - $intermediateHeight - $bottomBuffer;
-      text-align: center;
-      position: relative;
-      background: url("bar.svg") no-repeat;
-      background-size: $barWidth $intermediateHeight;
-      background-origin: content-box; }
-      figure > div .intermediate.alt {
-        height: 115px; } 
-        figure > div .intermediate.alt div { 
-          position: absolute;
-          bottom: 0px;
-          left: 3px; }
-    figure > div .advanced {
-      height: $barHeight;
-      width: $barWidth;
-      text-align: center;
-      padding-top: $barHeight - $advancedHeight - $bottomBuffer;
-      position: relative;
-      background: url("bar.svg") no-repeat;
-      background-size: $barWidth $advancedHeight;
-      background-origin: content-box; }
-      figure > div .advanced.alt {
-        height: 115px; }
-        figure > div .advanced.alt div {
-          position: absolute;
-          bottom: 0px;
-          left: 3px; }
-    figure > div .expert {
-      height: $barHeight;
-      width: $barWidth;
-      text-align: center;
-      padding-top: $barHeight - $expertHeight - $bottomBuffer;
-      position: relative;
-      background: url("bar.svg") no-repeat;
-      background-size: $barWidth $expertHeight;
-      background-origin: content-box; }
-      figure > div .expert.alt {
-        height: 115px; }
-        figure > div .expert.alt div {
-          position: absolute;
-          bottom: 0px;
-          left: 3px; }
+        width: 100%;
+    }
+}
+
+figure>div .beginner {
+    padding-top: $barHeight - $beginnerHeight - $bottomBuffer;
+    background-size: $barWidth $beginnerHeight;
+}
+
+figure>div .intermediate {
+    padding-top: $barHeight - $intermediateHeight - $bottomBuffer;
+    background-size: $barWidth $intermediateHeight;
+}
+
+figure>div .advanced {
+    padding-top: $barHeight - $advancedHeight - $bottomBuffer;
+    background-size: $barWidth $advancedHeight;
+}
+
+figure>div .expert {
+    padding-top: $barHeight - $expertHeight - $bottomBuffer;
+    background-size: $barWidth $expertHeight;
+}
