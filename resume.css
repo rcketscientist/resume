@@ -1,6 +1,5 @@
 body {
-  margin: 5%;
-  --maxBarHeight: 75px; }
+  margin: 5%; }
 
 .Heading {
   font-family: Calibri;
@@ -153,10 +152,12 @@ figure > div.technical .bar .graph-header {
 figure > div .beginner {
   height: 98px;
   width: 8px;
+  padding-top: 48px;
   text-align: center;
   position: relative;
   background: url("bar.svg") no-repeat;
-  background-size: 8px 15px; }
+  background-size: 8px 20px;
+  background-origin: content-box; }
 
 figure > div .beginner.alt {
   height: 115px; }
@@ -169,11 +170,12 @@ figure > div .beginner.alt div {
 figure > div .intermediate {
   height: 98px;
   width: 8px;
-  padding-top: calc(height - $intermediateHeight);
+  padding-top: 33px;
   text-align: center;
   position: relative;
   background: url("bar.svg") no-repeat;
-  background-size: 8px 35px; }
+  background-size: 8px 35px;
+  background-origin: content-box; }
 
 figure > div .intermediate.alt {
   height: 115px; }
@@ -187,9 +189,11 @@ figure > div .advanced {
   height: 98px;
   width: 8px;
   text-align: center;
+  padding-top: 18px;
   position: relative;
   background: url("bar.svg") no-repeat;
-  background-size: 8px 45px; }
+  background-size: 8px 50px;
+  background-origin: content-box; }
 
 figure > div .advanced.alt {
   height: 115px; }
@@ -203,9 +207,11 @@ figure > div .expert {
   height: 98px;
   width: 8px;
   text-align: center;
+  padding-top: 3px;
   position: relative;
   background: url("bar.svg") no-repeat;
-  background-size: 8px 60px; }
+  background-size: 8px 65px;
+  background-origin: content-box; }
 
 figure > div .expert.alt {
   height: 115px; }

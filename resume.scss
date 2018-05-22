@@ -1,6 +1,13 @@
+$barHeight: 98px;
+$barWidth: 8px;
+$beginnerHeight: 20px;
+$intermediateHeight: 35px;
+$advancedHeight: 50px;
+$expertHeight: 65px;
+$bottomBuffer: 30px;
+
 body {			
   margin: 5%; 
-  --maxBarHeight: 75px;
 }
 .Heading {
 	font-family: Calibri;
@@ -135,12 +142,14 @@ figure {
       figure > div.technical .bar .graph-header {
         background-color: #444444; }
     figure > div .beginner {
-      height: 98px;
-      width: 8px;
+      height: $barHeight;
+      width: $barWidth;
+      padding-top: $barHeight - $beginnerHeight - $bottomBuffer;
       text-align: center;
       position: relative;
       background: url("bar.svg") no-repeat;
-      background-size: 8px 15px; }
+      background-size: $barWidth $beginnerHeight;
+      background-origin: content-box; }
       figure > div .beginner.alt {
         height: 115px; }
         figure > div .beginner.alt div {
@@ -148,14 +157,14 @@ figure {
           bottom: 0px;
           left: 3px; }
     figure > div .intermediate {
-      $intermediateHeight: 30px;
-      height: 98px;
-      width: 8px;
-      padding-top: calc(height - $intermediateHeight);
+      height: $barHeight;
+      width: $barWidth;
+      padding-top: $barHeight - $intermediateHeight - $bottomBuffer;
       text-align: center;
       position: relative;
       background: url("bar.svg") no-repeat;
-      background-size: 8px 35px; }
+      background-size: $barWidth $intermediateHeight;
+      background-origin: content-box; }
       figure > div .intermediate.alt {
         height: 115px; } 
         figure > div .intermediate.alt div { 
@@ -163,12 +172,14 @@ figure {
           bottom: 0px;
           left: 3px; }
     figure > div .advanced {
-      height: 98px;
-      width: 8px;
+      height: $barHeight;
+      width: $barWidth;
       text-align: center;
+      padding-top: $barHeight - $advancedHeight - $bottomBuffer;
       position: relative;
       background: url("bar.svg") no-repeat;
-      background-size: 8px 45px; }
+      background-size: $barWidth $advancedHeight;
+      background-origin: content-box; }
       figure > div .advanced.alt {
         height: 115px; }
         figure > div .advanced.alt div {
@@ -176,12 +187,14 @@ figure {
           bottom: 0px;
           left: 3px; }
     figure > div .expert {
-      height: 98px;
-      width: 8px;
+      height: $barHeight;
+      width: $barWidth;
       text-align: center;
+      padding-top: $barHeight - $expertHeight - $bottomBuffer;
       position: relative;
       background: url("bar.svg") no-repeat;
-      background-size: 8px 60px; }
+      background-size: $barWidth $expertHeight;
+      background-origin: content-box; }
       figure > div .expert.alt {
         height: 115px; }
         figure > div .expert.alt div {
