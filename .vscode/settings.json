@@ -1,0 +1,10 @@
+{
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.scss$",
+                "cmd": "node-sass ${file} ${fileDirname}\\${fileBasenameNoExt}.css"
+            }
+        ]
+    }
+}

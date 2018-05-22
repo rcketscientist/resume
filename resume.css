@@ -1,80 +1,82 @@
-/*paper-like margins*/
-body{			
-margin: 5%; 
-}
+body {
+  margin: 5%;
+  --maxBarHeight: 75px; }
+
 .Heading {
-	font-family: Calibri;
-	font-size: 14pt;
-	font-weight: bold;
-	border-bottom-style: double;
-}
+  font-family: Calibri;
+  font-size: 14pt;
+  font-weight: bold;
+  border-bottom-style: double; }
+
 .TableHeading {
-	font-family: "Times New Roman", Times, serif;
-}
+  font-family: "Times New Roman", Times, serif; }
+
 .HeadingLeft {
-	font-family: Garamond;
-	font-size: 26pt;
-	border-bottom-style: none;
-	border-top-style: none;
-	border-right-style: none;
-	border-left-style: none;
-	vertical-align: bottom;
-	text-align: left;
-	white-space: normal;
-}
+  font-family: Garamond;
+  font-size: 26pt;
+  border-bottom-style: none;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  vertical-align: bottom;
+  text-align: left;
+  white-space: normal; }
+
 .HeavyRule {
-	border-bottom-style: solid;
-	border-bottom-width: thick;
-	border-bottom-color: #000;
-	font-family: Calibri;
-	font-weight: bold;
-	font-size: 12pt;
-}
+  border-bottom-style: solid;
+  border-bottom-width: thick;
+  border-bottom-color: #000;
+  font-family: Calibri;
+  font-weight: bold;
+  font-size: 12pt; }
+
 .Skills {
-	font-family: Calibri;
-	font-size: 12pt;
-}
+  font-family: Calibri;
+  font-size: 12pt; }
+
 .JobHeader {
-	font-family: Calibri;
-	font-size: 12pt;
-	font-weight: bold;
-}
+  font-family: Calibri;
+  font-size: 12pt;
+  font-weight: bold; }
+
 .Schooling {
-	font-family: Calibri;
-	font-size: 12pt;
-	list-style-image: none;
-	list-style-type: none;
-	list-style-position: outside;
-}
+  font-family: Calibri;
+  font-size: 12pt;
+  list-style-image: none;
+  list-style-type: none;
+  list-style-position: outside; }
+
 .RightHeading {
-	text-align: right;
-}
+  text-align: right; }
+
 .RightHeading {
-	font-family: Garamond;
-	font-weight: bold;
-	font-size: 12pt;
-}
+  font-family: Garamond;
+  font-weight: bold;
+  font-size: 12pt; }
+
 .skills {
-	float: left;
-	text-align: left; }
-	.skills ul {
-		padding: 0px;
-		margin: 20px 0 0 0; }
-		.skills ul li {
-		  list-style-type: none;
-		  text-align: right;
-		  height: 17px;
-		  margin: 0 10px 0 0;
-		  padding-right: 10px;
-		  font-style: italic;
-		  font-family: Georgia;
-		  font-weight: bold;
-		  font-size: 11px;
-		  background: url("/images/about/dash.jpg") no-repeat 100% 50%; }
-		  @media (max-width: 991px) {
-			.skills ul li {
-			  font-size: 10px; } 
-		  }
+  float: left;
+  text-align: left; }
+
+.skills ul {
+  padding: 0px;
+  margin: 20px 0 0 0; }
+
+.skills ul li {
+  list-style-type: none;
+  text-align: right;
+  height: 17px;
+  margin: 0 10px 0 0;
+  padding-right: 10px;
+  font-style: italic;
+  font-family: Georgia;
+  font-weight: bold;
+  font-size: 11px;
+  background: url("/images/about/dash.jpg") no-repeat 100% 50%; }
+
+@media (max-width: 991px) {
+  .skills ul li {
+    font-size: 10px; } }
 
 figure {
   margin: 0px auto;
@@ -84,114 +86,131 @@ figure {
   flex-wrap: nowrap;
   align-content: center;
   align-items: flex-start; }
-  @media (max-width: 767px) {
-    figure {
-      flex-direction: column; } }
-  figure p {
-    position: absolute;
-    top: 75px;
-    left: 0px;
-    width: 100%;
-    text-align: center;
-    font-family: "Archer-Book", Georgia, Serif;
-    color: #000;
-    font-size: 10px;
-    z-index: 100;
-    padding: 0px;
-    margin: 0px; }
-  figure .bar {
-    display: table-cell;
-    vertical-align: top;
-    padding: 0px;
-    font-style: italic;
-    font-size: 11px;
-    text-align: center;
-    z-index: 300; }
-    figure .bar .graph-header {
-      position: absolute;
-      top: 73px;
-      height: 18px;
-      left: 0px;
-      right: 0px; }
+
+@media (max-width: 767px) {
+  figure {
+    flex-direction: column; } }
+
+figure p {
+  position: absolute;
+  top: 75px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  font-family: "Archer-Book", Georgia, Serif;
+  color: #fff;
+  font-size: 10px;
+  z-index: 100;
+  padding: 0px;
+  margin: 0px; }
+
+figure .bar {
+  display: table-cell;
+  vertical-align: top;
+  font-style: italic;
+  font-size: 11px;
+  text-align: center;
+  z-index: 300; }
+
+figure .bar .graph-header {
+  position: absolute;
+  top: 73px;
+  height: 18px;
+  left: 0px;
+  right: 0px; }
+
+figure > div {
+  margin-top: 25px;
+  font-size: 12px;
+  position: relative; }
+
+@media (max-width: 767px) {
   figure > div {
-    margin-top: 25px;
-    font-size: 12px;
-    position: relative; }
-    @media (max-width: 767px) {
-      figure > div {
-        height: auto;
-        width: 100%; } }
-    figure > div.frontend .bar {
-      width: 20%; }
-      figure > div.frontend .bar .graph-header {
-        background-color: #f77c7f; }
-        figure > div.frontend .bar .graph-header.dark {
-          border-right: 15px solid #ff3f18; }
-    figure > div.programming .bar {
-      width: 14%; }
-      figure > div.programming .bar .graph-header {
-        background-color: #fd835e; }
-        figure > div.programming .bar .graph-header.dark {
-          border-right: 15px solid #ffb317; }
-    figure > div.technical .bar {
-      width: 12%; }
-      figure > div.technical .bar .graph-header {
-        background-color: #ffdd4d; }
-        figure > div.technical .bar .graph-header.dark {
-          border-right: 15px solid #c1e31a; }
-    figure > div .beginner {
-      height: 24px;
-      width: 8px;
-      margin: 0 auto;
-      border: 0px;
-      text-align: center;
-      position: relative;
-      background: url("bar.svg") no-repeat; }
-      figure > div .beginner.alt {
-        height: 115px; }
-        figure > div .beginner.alt div {
-          position: absolute;
-          bottom: 0px;
-          left: 3px; }
-    figure > div .intermediate {
-      height: 48px;
-      width: 8px;
-      margin: 0 auto;
-      border: 0px;
-      text-align: center;
-      position: relative;
-      background: url("bar.svg") no-repeat; }
-      figure > div .intermediate.alt {
-        height: 115px; }
-        figure > div .intermediate.alt div {
-          position: absolute;
-          bottom: 0px;
-          left: 3px; }
-    figure > div .advanced {
-      height: 72px;
-      width: 8px;
-      margin: 0 auto;
-      border: 0px;
-      text-align: center;
-      position: relative;
-      background: url("bar.svg") no-repeat; }
-      figure > div .advanced.alt {
-        height: 115px; }
-        figure > div .advanced.alt div {
-          position: absolute;
-          bottom: 0px;
-          left: 3px; }
-    figure > div .expert {
-      height: 96px;
-      width: 8px;
-      margin: 0 auto;
-      border: 0px;
-      text-align: center;
-      position: relative;
-      background: url("bar.svg") no-repeat; }
-      figure > div .expert.alt {
-        height: 115px; }
-        figure > div .expert.alt div {
-          position: absolute;
-          bottom: 0px;
-          left: 3px; }
+    height: auto;
+    width: 100%; } }
+
+figure > .bar {
+  margin-bottom: 25px; }
+
+figure > div.frontend .bar {
+  width: 20%; }
+
+figure > div.frontend .bar .graph-header {
+  background-color: #444444; }
+
+figure > div.programming .bar {
+  width: 14%; }
+
+figure > div.programming .bar .graph-header {
+  background-color: #888888; }
+
+figure > div.technical .bar {
+  width: 12%; }
+
+figure > div.technical .bar .graph-header {
+  background-color: #444444; }
+
+figure > div .beginner {
+  height: 98px;
+  width: 8px;
+  text-align: center;
+  position: relative;
+  background: url("bar.svg") no-repeat;
+  background-size: 8px 15px; }
+
+figure > div .beginner.alt {
+  height: 115px; }
+
+figure > div .beginner.alt div {
+  position: absolute;
+  bottom: 0px;
+  left: 3px; }
+
+figure > div .intermediate {
+  height: 98px;
+  width: 8px;
+  padding-top: calc(height - $intermediateHeight);
+  text-align: center;
+  position: relative;
+  background: url("bar.svg") no-repeat;
+  background-size: 8px 35px; }
+
+figure > div .intermediate.alt {
+  height: 115px; }
+
+figure > div .intermediate.alt div {
+  position: absolute;
+  bottom: 0px;
+  left: 3px; }
+
+figure > div .advanced {
+  height: 98px;
+  width: 8px;
+  text-align: center;
+  position: relative;
+  background: url("bar.svg") no-repeat;
+  background-size: 8px 45px; }
+
+figure > div .advanced.alt {
+  height: 115px; }
+
+figure > div .advanced.alt div {
+  position: absolute;
+  bottom: 0px;
+  left: 3px; }
+
+figure > div .expert {
+  height: 98px;
+  width: 8px;
+  text-align: center;
+  position: relative;
+  background: url("bar.svg") no-repeat;
+  background-size: 8px 60px; }
+
+figure > div .expert.alt {
+  height: 115px; }
+
+figure > div .expert.alt div {
+  position: absolute;
+  bottom: 0px;
+  left: 3px; }
