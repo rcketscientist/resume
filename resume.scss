@@ -9,20 +9,6 @@ $advancedHeight:        $expertHeight - $masterySpacing;
 $intermediateHeight:    $advancedHeight - $masterySpacing;
 $beginnerHeight:        $intermediateHeight - $masterySpacing;
 
-$totalSkills: 19;
-$frontSkills: 5;
-$codeSkills: 7;
-$techSkills: 7;
-
-$skillRatio: (100 / $totalSkills) + '%';
-$frontRatio: (($frontSkills / $totalSkills) * 100) +'%';
-$codeRatio: (($codeSkills / $totalSkills) * 100) +'%';
-$techRatio: (($techSkills / $totalSkills) * 100) +'%';
-
-$frontBarRatio: (100 / $frontSkills)+'%';
-$codeBarRatio: (100 / $codeSkills)+'%';
-$techBarRatio: (100 / $techSkills)+'%';
-
 body {
     margin: 5%;
 }
@@ -164,7 +150,6 @@ figure {
         display: flex;
         width: 50px;
         flex-direction: column;
-        width: $skillRatio;
     }
 
     .graph-header {
@@ -205,9 +190,6 @@ figure {
         & .graph-header {
             background-color: #444444;
         }
-        & .bar {
-            width: $frontBarRatio;
-        }
     }
     
     .programming {
@@ -215,18 +197,12 @@ figure {
         & .graph-header {
             background-color: #888888;
         }
-        & .bar {
-            width: $codeBarRatio;
-        }
     }
     
     .technical {
         @include skillGroup;
         & .graph-header {
             background-color: #444444;
-        }
-        & .bar {
-            width: $techBarRatio;
         }
     }
 

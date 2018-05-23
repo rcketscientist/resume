@@ -95,8 +95,7 @@ figure {
   figure .skill {
     display: flex;
     width: 50px;
-    flex-direction: column;
-    width: "5.26316%"; }
+    flex-direction: column; }
   figure .graph-header {
     position: absolute;
     top: 73px;
@@ -131,8 +130,6 @@ figure {
     position: relative; }
     figure .frontend .graph-header {
       background-color: #444444; }
-    figure .frontend .bar {
-      width: "20%"; }
   figure .programming {
     display: flex;
     margin-top: 25px;
@@ -140,8 +137,6 @@ figure {
     position: relative; }
     figure .programming .graph-header {
       background-color: #888888; }
-    figure .programming .bar {
-      width: "14.28571%"; }
   figure .technical {
     display: flex;
     margin-top: 25px;
@@ -149,8 +144,6 @@ figure {
     position: relative; }
     figure .technical .graph-header {
       background-color: #444444; }
-    figure .technical .bar {
-      width: "14.28571%"; }
   figure .beginner {
     height: 19px;
     padding-top: 50px;
