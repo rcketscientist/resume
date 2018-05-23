@@ -93,6 +93,9 @@ figure {
   align-content: center;
   align-items: flex-start; }
   figure .skill {
+    display: flex;
+    width: 50px;
+    flex-direction: column;
     width: "5.26316%"; }
   figure .graph-header {
     position: absolute;
@@ -112,13 +115,15 @@ figure {
     padding: 0px;
     margin: 0px; }
   figure .bar {
-    height: 81px;
+    display: flex;
+    align-self: flex-end;
     width: 8px;
     background: url("bar.svg") no-repeat;
     background-origin: content-box;
     font-size: 11px;
     z-index: 300;
-    margin-bottom: 25px; }
+    margin-bottom: 40px;
+    margin-right: 10px; }
   figure .frontend {
     display: flex;
     margin-top: 25px;
@@ -147,21 +152,26 @@ figure {
     figure .technical .bar {
       width: "14.28571%"; }
   figure .beginner {
-    padding-top: 52px;
+    height: 19px;
+    padding-top: 50px;
     background-size: 8px 19px; }
   figure .intermediate {
-    padding-top: 35px;
+    height: 36px;
+    padding-top: 33px;
     background-size: 8px 36px; }
   figure .advanced {
-    padding-top: 18px;
+    height: 53px;
+    padding-top: 16px;
     background-size: 8px 53px; }
   figure .expert {
-    padding-top: 1px;
+    height: 70px;
+    padding-top: -1px;
     background-size: 8px 70px; }
   figure label {
-    display: inline-block;
-    transform: rotate(-75deg);
+    height: 110px;
+    width: 100px;
+    text-align: right;
+    transform: rotate(-60deg);
     white-space: nowrap;
     font-family: Calibri;
-    align-self: flex-end;
     font-size: 10pt; }

@@ -1,6 +1,6 @@
 $barHeight: 81px;
 $barWidth: 8px;
-$bottomBuffer: 10px;
+$bottomBuffer: 12px;
 $headerHeight: 18px;
 $masterySpacing: 17px;
 
@@ -15,9 +15,9 @@ $codeSkills: 7;
 $techSkills: 7;
 
 $skillRatio: (100 / $totalSkills) + '%';
-$frontRatio: (($frontSkills / $totalSkills) * 100)+'%';
-$codeRatio: (($codeSkills / $totalSkills) * 100)+'%';
-$techRatio: (($techSkills / $totalSkills) * 100)+'%';
+$frontRatio: (($frontSkills / $totalSkills) * 100) +'%';
+$codeRatio: (($codeSkills / $totalSkills) * 100) +'%';
+$techRatio: (($techSkills / $totalSkills) * 100) +'%';
 
 $frontBarRatio: (100 / $frontSkills)+'%';
 $codeBarRatio: (100 / $codeSkills)+'%';
@@ -161,6 +161,9 @@ figure {
     align-items: flex-start;
 
     .skill {
+        display: flex;
+        width: 50px;
+        flex-direction: column;
         width: $skillRatio;
     }
 
@@ -186,13 +189,15 @@ figure {
     }
 
     .bar {
-        height: $barHeight;
+        display: flex;
+        align-self: flex-end;
         width: $barWidth;
         background: url("bar.svg") no-repeat;
         background-origin: content-box;
         font-size: 11px;
         z-index: 300;
-        margin-bottom: 25px;
+        margin-bottom: 40px;
+        margin-right: 10px;
     }
     
     .frontend {
@@ -226,32 +231,37 @@ figure {
     }
 
     .beginner {
+        height: $beginnerHeight;
         padding-top: $barHeight - $beginnerHeight - $bottomBuffer;
         background-size: $barWidth $beginnerHeight;
     }
     
     .intermediate {
+        height: $intermediateHeight;
         padding-top: $barHeight - $intermediateHeight - $bottomBuffer;
         background-size: $barWidth $intermediateHeight;
     }
     
     .advanced {
+        height: $advancedHeight;
         padding-top: $barHeight - $advancedHeight - $bottomBuffer;
         background-size: $barWidth $advancedHeight;
     }
     
     .expert {
+        height: $expertHeight;
         padding-top: $barHeight - $expertHeight - $bottomBuffer;
         background-size: $barWidth $expertHeight;
     }
 
     & label {
-        display: inline-block;
-        transform: rotate(-75deg);
-        // transform-origin: right center;
+        height: 110px;
+        width: 100px;
+        text-align: right;
+        transform: rotate(-60deg);
+        // transform-origin: 50% 100%;
         white-space: nowrap;
         font-family: Calibri;
-        align-self: flex-end;
         font-size: 10pt;
     }
 }
