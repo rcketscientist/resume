@@ -58,17 +58,19 @@ body {
   flex-direction: row; }
 
 line {
-  width: 100px;
-  flex-grow: 1;
+  width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  line-height: 0.1em;
-  align-self: center; }
+  line-height: 0.1em; }
+
+.gridLine {
+  right: 0;
+  padding-top: 8px;
+  margin-left: 95px;
+  position: absolute; }
 
 .mastery {
   width: 100%;
-  float: left;
-  text-align: left;
-  position: relative; }
+  float: left; }
 
 .mastery ul {
   padding: 0px;
@@ -85,7 +87,8 @@ line {
   background: url("/images/about/dash.jpg") no-repeat 100% 50%; }
 
 figure {
-  display: flex; }
+  display: flex;
+  position: relative; }
   figure .skill {
     display: flex;
     width: 50px;
@@ -119,6 +122,7 @@ figure {
   figure .frontend {
     display: flex;
     margin-top: 25px;
+    margin-left: -20px;
     font-size: 12px;
     position: relative;
     padding-right: 16px; }
@@ -128,6 +132,7 @@ figure {
   figure .programming {
     display: flex;
     margin-top: 25px;
+    margin-left: -20px;
     font-size: 12px;
     position: relative;
     padding-right: 16px; }
@@ -136,6 +141,7 @@ figure {
   figure .technical {
     display: flex;
     margin-top: 25px;
+    margin-left: -20px;
     font-size: 12px;
     position: relative; }
     figure .technical .graph-header {

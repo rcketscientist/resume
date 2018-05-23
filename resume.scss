@@ -80,18 +80,31 @@ body {
 }
 
 line {
-    width: 100px; 
-    flex-grow: 1;
+    width: 100%; 
     border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
     line-height: 0.1em;
-    align-self: center;
+}
+
+.gridLine {
+    // display: flex;
+    // vertical-align: middle;
+    // flex-grow: 1;
+    // width: 71.5vw;
+    // left: calc(-100%);
+    right: 0;
+    // margin-left: 20px;
+    padding-top: 8px;
+    margin-left: 95px;
+    position: absolute;
+    // left: 50%;
+    // right: 50%;
+    // margin-left: -50vw;
+    // margin-right: -50vw;
 }
 
 .mastery {
     width: 100%;
     float: left;
-    text-align: left;
-    position: relative;
 }
 
 .mastery ul {
@@ -133,16 +146,13 @@ figure {
     @mixin skillGroup {
         display: flex;
         margin-top: 25px;
+        margin-left: -20px;
         font-size: 12px;
         position: relative;
     }
 
-    // margin: 0px auto;
     display: flex;
-    // justify-content: center;
-    // flex-wrap: nowrap;
-    // align-content: center;
-    // align-items: flex-start;
+    position: relative;
 
     .skill {
         display: flex;
