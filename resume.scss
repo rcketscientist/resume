@@ -13,13 +13,6 @@ body {
     margin: 5%;
 }
 
-line {
-    width: 100%; 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
-    line-height: 0.1em;
-    align-self: center;
-}
-
 .Heading {
     font-family: Calibri;
     font-size: 14pt;
@@ -86,6 +79,14 @@ line {
     flex-direction: row;
 }
 
+line {
+    width: 100px; 
+    flex-grow: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
+    line-height: 0.1em;
+    align-self: center;
+}
+
 .mastery {
     width: 100%;
     float: left;
@@ -102,8 +103,6 @@ line {
     list-style-type: none;
     text-align: right;
     height: 17px;
-    margin: 0 10px 0 0;
-    padding-right: 10px;
     font-style: italic;
     font-family: Georgia;
     font-weight: bold;
@@ -138,13 +137,12 @@ figure {
         position: relative;
     }
 
-    margin: 0px auto;
+    // margin: 0px auto;
     display: flex;
-    // flex-direction: row;
-    justify-content: center;
-    flex-wrap: nowrap;
-    align-content: center;
-    align-items: flex-start;
+    // justify-content: center;
+    // flex-wrap: nowrap;
+    // align-content: center;
+    // align-items: flex-start;
 
     .skill {
         display: flex;
@@ -182,14 +180,16 @@ figure {
         font-size: 11px;
         z-index: 300;
         margin-bottom: 40px;
-        margin-right: 10px;
+        // margin-right: 10px;
     }
     
     .frontend {
         @include skillGroup;
         & .graph-header {
+            margin-left: 40px;
             background-color: #444444;
         }
+        padding-right: 16px;
     }
     
     .programming {
@@ -197,6 +197,7 @@ figure {
         & .graph-header {
             background-color: #888888;
         }
+        padding-right: 16px;
     }
     
     .technical {
@@ -234,7 +235,7 @@ figure {
         height: 110px;
         width: 100px;
         text-align: right;
-        transform: rotate(-60deg);
+        transform: rotate(-50deg);
         // transform-origin: 50% 100%;
         white-space: nowrap;
         font-family: Calibri;
