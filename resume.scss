@@ -146,13 +146,13 @@ figure {
     @mixin skillGroup {
         display: flex;
         margin-top: 25px;
-        margin-left: -20px;
         font-size: 12px;
         position: relative;
     }
 
     display: flex;
     position: relative;
+    margin-left: -20px;
 
     .skill {
         display: flex;
@@ -199,7 +199,7 @@ figure {
             margin-left: 40px;
             background-color: #444444;
         }
-        padding-right: 16px;
+        padding-right: 30px;
     }
     
     .programming {
@@ -207,7 +207,7 @@ figure {
         & .graph-header {
             background-color: #888888;
         }
-        padding-right: 16px;
+        padding-right: 30px;
     }
     
     .technical {

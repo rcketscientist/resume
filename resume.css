@@ -88,7 +88,8 @@ line {
 
 figure {
   display: flex;
-  position: relative; }
+  position: relative;
+  margin-left: -20px; }
   figure .skill {
     display: flex;
     width: 50px;
@@ -122,26 +123,23 @@ figure {
   figure .frontend {
     display: flex;
     margin-top: 25px;
-    margin-left: -20px;
     font-size: 12px;
     position: relative;
-    padding-right: 16px; }
+    padding-right: 30px; }
     figure .frontend .graph-header {
       margin-left: 40px;
       background-color: #444444; }
   figure .programming {
     display: flex;
     margin-top: 25px;
-    margin-left: -20px;
     font-size: 12px;
     position: relative;
-    padding-right: 16px; }
+    padding-right: 30px; }
     figure .programming .graph-header {
       background-color: #888888; }
   figure .technical {
     display: flex;
     margin-top: 25px;
-    margin-left: -20px;
     font-size: 12px;
     position: relative; }
     figure .technical .graph-header {
