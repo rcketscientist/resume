@@ -59,13 +59,12 @@ body {
 
 line {
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
   line-height: 0.1em; }
 
 .gridLine {
-  right: 0;
-  padding-top: 8px;
-  margin-left: 95px;
+  left: 20px;
+  padding-top: 10px;
   position: absolute; }
 
 .mastery {
@@ -83,13 +82,23 @@ line {
   font-style: italic;
   font-family: Georgia;
   font-weight: bold;
-  font-size: 11px;
-  background: url("/images/about/dash.jpg") no-repeat 100% 50%; }
+  font-size: 11px; }
+
+.graph {
+  display: flex;
+  position: relative; }
+
+.grid {
+  width: 0px;
+  padding: 0px; }
+
+.grid li {
+  list-style-type: none;
+  height: 17px; }
 
 figure {
   display: flex;
-  position: relative;
-  margin-left: -20px; }
+  position: relative; }
   figure .skill {
     display: flex;
     width: 50px;
@@ -125,6 +134,8 @@ figure {
     margin-top: 25px;
     font-size: 12px;
     position: relative;
+    margin-left: -20px;
+    padding-left: 6px;
     padding-right: 30px; }
     figure .frontend .graph-header {
       margin-left: 40px;
@@ -141,7 +152,8 @@ figure {
     display: flex;
     margin-top: 25px;
     font-size: 12px;
-    position: relative; }
+    position: relative;
+    padding-right: 6px; }
     figure .technical .graph-header {
       background-color: #444444; }
   figure .beginner {

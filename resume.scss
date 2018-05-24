@@ -3,6 +3,7 @@ $barWidth: 8px;
 $bottomBuffer: 12px;
 $headerHeight: 18px;
 $masterySpacing: 17px;
+$labelSpacing: 20px;
 
 $expertHeight: 70px;
 $advancedHeight:        $expertHeight - $masterySpacing;
@@ -81,25 +82,16 @@ body {
 
 line {
     width: 100%; 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.3); 
     line-height: 0.1em;
 }
 
 .gridLine {
-    // display: flex;
-    // vertical-align: middle;
-    // flex-grow: 1;
-    // width: 71.5vw;
-    // left: calc(-100%);
-    right: 0;
-    // margin-left: 20px;
-    padding-top: 8px;
-    margin-left: 95px;
+    // width: calc(100% - $labelSpacing);
+    left: $labelSpacing;
+    // right: -20px;
+    padding-top: 10px;
     position: absolute;
-    // left: 50%;
-    // right: 50%;
-    // margin-left: -50vw;
-    // margin-right: -50vw;
 }
 
 .mastery {
@@ -120,7 +112,21 @@ line {
     font-family: Georgia;
     font-weight: bold;
     font-size: 11px;
-    background: url("/images/about/dash.jpg") no-repeat 100% 50%;
+}
+
+.graph {
+    display: flex;
+    position: relative;
+}
+
+.grid {
+    width: 0px;
+    padding: 0px;
+}
+
+.grid li {
+    list-style-type: none;
+    height: 17px;
 }
 
 // @media (max-width: 991px) {
@@ -152,7 +158,6 @@ figure {
 
     display: flex;
     position: relative;
-    margin-left: -20px;
 
     .skill {
         display: flex;
@@ -190,7 +195,6 @@ figure {
         font-size: 11px;
         z-index: 300;
         margin-bottom: 40px;
-        // margin-right: 10px;
     }
     
     .frontend {
@@ -199,6 +203,8 @@ figure {
             margin-left: 40px;
             background-color: #444444;
         }
+        margin-left: -$labelSpacing;
+        padding-left: 6px;
         padding-right: 30px;
     }
     
@@ -215,6 +221,7 @@ figure {
         & .graph-header {
             background-color: #444444;
         }
+        padding-right: 6px;
     }
 
     .beginner {
