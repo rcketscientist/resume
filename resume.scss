@@ -79,7 +79,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    // align-content: center;
 }
 
 line {
@@ -188,6 +187,7 @@ figure {
     }
 
     .bar {
+        bottom: 72;
         display: flex;
         align-self: flex-end;
         width: $barWidth;
@@ -228,25 +228,37 @@ figure {
     .beginner {
         height: $beginnerHeight;
         padding-top: $barHeight - $beginnerHeight - $bottomBuffer;
-        background-size: $barWidth $beginnerHeight;
+        background: url("beginner.svg") no-repeat;
+        &.like {
+            background: url("beginnerFill.svg") no-repeat;
+        }
     }
     
     .intermediate {
         height: $intermediateHeight;
         padding-top: $barHeight - $intermediateHeight - $bottomBuffer;
-        background-size: $barWidth $intermediateHeight;
+        background: url("intermediate.svg") no-repeat;
+        &.like {
+            background: url("intermediateFill.svg") no-repeat;
+        }
     }
     
     .advanced {
         height: $advancedHeight;
         padding-top: $barHeight - $advancedHeight - $bottomBuffer;
-        background-size: $barWidth $advancedHeight;
+        background: url("advanced.svg") no-repeat;
+        &.like {
+            background: url("advancedFill.svg") no-repeat;
+        }
     }
     
     .expert {
         height: $expertHeight;
         padding-top: $barHeight - $expertHeight - $bottomBuffer;
-        background-size: $barWidth $expertHeight;
+        background: url("expert.svg") no-repeat;
+        &.like {
+            background: url("expertFill.svg") no-repeat;
+        }
     }
 
     & label {
@@ -254,7 +266,6 @@ figure {
         width: 100px;
         text-align: right;
         transform: rotate(-50deg);
-        // transform-origin: 50% 100%;
         white-space: nowrap;
         font-family: Calibri;
         font-size: 10pt;
