@@ -85,6 +85,10 @@ line {
   font-family: Georgia;
   font-weight: bold;
   font-size: 11px; }
+  .mastery ul li.like {
+    background: url("like.svg") no-repeat; }
+  .mastery ul li.dislike {
+    background: url("dislike.svg") no-repeat; }
 
 .graph {
   display: flex;

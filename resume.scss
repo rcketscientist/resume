@@ -112,6 +112,12 @@ line {
     font-family: Georgia;
     font-weight: bold;
     font-size: 11px;
+    &.like {
+        background: url("like.svg") no-repeat;
+    }
+    &.dislike {
+        background: url("dislike.svg") no-repeat;
+    }
 }
 
 .graph {
@@ -232,6 +238,9 @@ figure {
         &.like {
             background: url("beginnerFill.svg") no-repeat;
         }
+        // &.dislike {
+        //     fill: gray;
+        // }
     }
     
     .intermediate {
