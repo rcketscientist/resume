@@ -104,6 +104,26 @@ line {
     margin: 20px 0 0 0;
 }
 
+.legend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .like {
+        background: url("like.svg") no-repeat;
+        height: 32px;
+        width: 32px;
+        margin: 4px;
+    }
+    .dislike {
+        background: url("dislike.svg") no-repeat;
+        height: 32px;
+        width: 32px;
+        margin: 4px;
+
+    }
+}
+
 .mastery ul li {
     list-style-type: none;
     text-align: right;
@@ -112,12 +132,6 @@ line {
     font-family: Georgia;
     font-weight: bold;
     font-size: 11px;
-    &.like {
-        background: url("like.svg") no-repeat;
-    }
-    &.dislike {
-        background: url("dislike.svg") no-repeat;
-    }
 }
 
 .graph {
@@ -236,11 +250,11 @@ figure {
         padding-top: $barHeight - $beginnerHeight - $bottomBuffer;
         background: url("beginner.svg") no-repeat;
         &.like {
-            background: url("beginnerFill.svg") no-repeat;
+            background: url("beginnerBlack.svg") no-repeat;
         }
-        // &.dislike {
-        //     fill: gray;
-        // }
+        &.dislike {
+            background: url("beginnerGray.svg") no-repeat;
+        }
     }
     
     .intermediate {
@@ -248,7 +262,10 @@ figure {
         padding-top: $barHeight - $intermediateHeight - $bottomBuffer;
         background: url("intermediate.svg") no-repeat;
         &.like {
-            background: url("intermediateFill.svg") no-repeat;
+            background: url("intermediateBlack.svg") no-repeat;
+        }
+        &.dislike {
+            background: url("intermediateGray.svg") no-repeat;
         }
     }
     
@@ -257,7 +274,10 @@ figure {
         padding-top: $barHeight - $advancedHeight - $bottomBuffer;
         background: url("advanced.svg") no-repeat;
         &.like {
-            background: url("advancedFill.svg") no-repeat;
+            background: url("advancedBlack.svg") no-repeat;
+        }
+        &.dislike {
+            background: url("advancedGray.svg") no-repeat;
         }
     }
     
@@ -266,7 +286,10 @@ figure {
         padding-top: $barHeight - $expertHeight - $bottomBuffer;
         background: url("expert.svg") no-repeat;
         &.like {
-            background: url("expertFill.svg") no-repeat;
+            background: url("expertBlack.svg") no-repeat;
+        }
+        &.dislike {
+            background: url("expertGray.svg") no-repeat;
         }
     }
 

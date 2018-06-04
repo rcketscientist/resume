@@ -77,6 +77,21 @@ line {
   padding: 0px;
   margin: 20px 0 0 0; }
 
+.legend {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .legend .like {
+    background: url("like.svg") no-repeat;
+    height: 32px;
+    width: 32px;
+    margin: 4px; }
+  .legend .dislike {
+    background: url("dislike.svg") no-repeat;
+    height: 32px;
+    width: 32px;
+    margin: 4px; }
+
 .mastery ul li {
   list-style-type: none;
   text-align: right;
@@ -85,10 +100,6 @@ line {
   font-family: Georgia;
   font-weight: bold;
   font-size: 11px; }
-  .mastery ul li.like {
-    background: url("like.svg") no-repeat; }
-  .mastery ul li.dislike {
-    background: url("dislike.svg") no-repeat; }
 
 .graph {
   display: flex;
@@ -168,25 +179,33 @@ figure {
     padding-top: 50px;
     background: url("beginner.svg") no-repeat; }
     figure .beginner.like {
-      background: url("beginnerFill.svg") no-repeat; }
+      background: url("beginnerBlack.svg") no-repeat; }
+    figure .beginner.dislike {
+      background: url("beginnerGray.svg") no-repeat; }
   figure .intermediate {
     height: 36px;
     padding-top: 33px;
     background: url("intermediate.svg") no-repeat; }
     figure .intermediate.like {
-      background: url("intermediateFill.svg") no-repeat; }
+      background: url("intermediateBlack.svg") no-repeat; }
+    figure .intermediate.dislike {
+      background: url("intermediateGray.svg") no-repeat; }
   figure .advanced {
     height: 53px;
     padding-top: 16px;
     background: url("advanced.svg") no-repeat; }
     figure .advanced.like {
-      background: url("advancedFill.svg") no-repeat; }
+      background: url("advancedBlack.svg") no-repeat; }
+    figure .advanced.dislike {
+      background: url("advancedGray.svg") no-repeat; }
   figure .expert {
     height: 70px;
     padding-top: -1px;
     background: url("expert.svg") no-repeat; }
     figure .expert.like {
-      background: url("expertFill.svg") no-repeat; }
+      background: url("expertBlack.svg") no-repeat; }
+    figure .expert.dislike {
+      background: url("expertGray.svg") no-repeat; }
   figure label {
     height: 110px;
     width: 100px;
