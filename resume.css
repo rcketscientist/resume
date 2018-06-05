@@ -1,33 +1,44 @@
 body {
   margin: 5%; }
 
-.Heading {
+.section {
   font-family: Calibri;
   font-size: 14pt;
   font-weight: bold;
   border-bottom-style: double; }
 
-.TableHeading {
-  font-family: "Times New Roman", Times, serif; }
-
-.HeadingLeft {
-  font-family: Garamond;
-  font-size: 26pt;
-  border-bottom-style: none;
-  border-top-style: none;
-  border-right-style: none;
-  border-left-style: none;
-  vertical-align: bottom;
-  text-align: left;
-  white-space: normal; }
-
-.HeavyRule {
+.heading {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   border-bottom-style: solid;
   border-bottom-width: thick;
   border-bottom-color: #000;
   font-family: Calibri;
   font-weight: bold;
   font-size: 12pt; }
+  .heading .left {
+    align-self: flex-end;
+    flex-grow: 1;
+    font-family: Garamond;
+    font-size: 26pt;
+    border-bottom-style: none;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    vertical-align: bottom;
+    text-align: left;
+    white-space: normal;
+    padding-bottom: 4px; }
+  .heading .right {
+    text-align: right;
+    font-family: Garamond;
+    font-weight: bold;
+    font-size: 12pt; }
+  .heading .details {
+    padding-bottom: 4px; }
+  .heading .links {
+    padding-left: 10px; }
 
 .Skills {
   font-family: Calibri;
@@ -44,14 +55,6 @@ body {
   list-style-image: none;
   list-style-type: none;
   list-style-position: outside; }
-
-.RightHeading {
-  text-align: right; }
-
-.RightHeading {
-  font-family: Garamond;
-  font-weight: bold;
-  font-size: 12pt; }
 
 .skillSection {
   display: flex;
