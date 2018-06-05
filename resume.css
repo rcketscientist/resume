@@ -40,21 +40,14 @@ body {
   .heading .links {
     padding-left: 10px; }
 
-.Skills {
+.accomplishment {
   font-family: Calibri;
   font-size: 12pt; }
 
-.JobHeader {
+.job {
   font-family: Calibri;
   font-size: 12pt;
   font-weight: bold; }
-
-.Schooling {
-  font-family: Calibri;
-  font-size: 12pt;
-  list-style-image: none;
-  list-style-type: none;
-  list-style-position: outside; }
 
 .skillSection {
   display: flex;
