@@ -110,13 +110,13 @@ line {
     align-items: center;
 
     .like {
-        background: url("like.svg") no-repeat;
+        background: url("res/like.svg") no-repeat;
         height: 32px;
         width: 32px;
         margin: 4px;
     }
     .dislike {
-        background: url("dislike.svg") no-repeat;
+        background: url("res/dislike.svg") no-repeat;
         height: 32px;
         width: 32px;
         margin: 4px;
@@ -211,7 +211,7 @@ figure {
         display: flex;
         align-self: flex-end;
         width: $barWidth;
-        background: url("bar.svg") no-repeat;
+        background: url("res/bar.svg") no-repeat;
         background-origin: content-box;
         font-size: 11px;
         z-index: 300;
@@ -248,48 +248,48 @@ figure {
     .beginner {
         height: $beginnerHeight;
         padding-top: $barHeight - $beginnerHeight - $bottomBuffer;
-        background: url("beginner.svg") no-repeat;
+        background: url("res/beginner.svg") no-repeat;
         &.like {
-            background: url("beginnerBlack.svg") no-repeat;
+            background: url("res/beginnerBlack.svg") no-repeat;
         }
         &.dislike {
-            background: url("beginnerGray.svg") no-repeat;
+            background: url("res/beginnerGray.svg") no-repeat;
         }
     }
     
     .intermediate {
         height: $intermediateHeight;
         padding-top: $barHeight - $intermediateHeight - $bottomBuffer;
-        background: url("intermediate.svg") no-repeat;
+        background: url("res/intermediate.svg") no-repeat;
         &.like {
-            background: url("intermediateBlack.svg") no-repeat;
+            background: url("res/intermediateBlack.svg") no-repeat;
         }
         &.dislike {
-            background: url("intermediateGray.svg") no-repeat;
+            background: url("res/intermediateGray.svg") no-repeat;
         }
     }
     
     .advanced {
         height: $advancedHeight;
         padding-top: $barHeight - $advancedHeight - $bottomBuffer;
-        background: url("advanced.svg") no-repeat;
+        background: url("res/advanced.svg") no-repeat;
         &.like {
-            background: url("advancedBlack.svg") no-repeat;
+            background: url("res/advancedBlack.svg") no-repeat;
         }
         &.dislike {
-            background: url("advancedGray.svg") no-repeat;
+            background: url("res/advancedGray.svg") no-repeat;
         }
     }
     
     .expert {
         height: $expertHeight;
         padding-top: $barHeight - $expertHeight - $bottomBuffer;
-        background: url("expert.svg") no-repeat;
+        background: url("res/expert.svg") no-repeat;
         &.like {
-            background: url("expertBlack.svg") no-repeat;
+            background: url("res/expertBlack.svg") no-repeat;
         }
         &.dislike {
-            background: url("expertGray.svg") no-repeat;
+            background: url("res/expertGray.svg") no-repeat;
         }
     }
 

@@ -82,12 +82,12 @@ line {
   flex-direction: row;
   align-items: center; }
   .legend .like {
-    background: url("like.svg") no-repeat;
+    background: url("res/like.svg") no-repeat;
     height: 32px;
     width: 32px;
     margin: 4px; }
   .legend .dislike {
-    background: url("dislike.svg") no-repeat;
+    background: url("res/dislike.svg") no-repeat;
     height: 32px;
     width: 32px;
     margin: 4px; }
@@ -142,7 +142,7 @@ figure {
     display: flex;
     align-self: flex-end;
     width: 8px;
-    background: url("bar.svg") no-repeat;
+    background: url("res/bar.svg") no-repeat;
     background-origin: content-box;
     font-size: 11px;
     z-index: 300;
@@ -177,35 +177,35 @@ figure {
   figure .beginner {
     height: 19px;
     padding-top: 50px;
-    background: url("beginner.svg") no-repeat; }
+    background: url("res/beginner.svg") no-repeat; }
     figure .beginner.like {
-      background: url("beginnerBlack.svg") no-repeat; }
+      background: url("res/beginnerBlack.svg") no-repeat; }
     figure .beginner.dislike {
-      background: url("beginnerGray.svg") no-repeat; }
+      background: url("res/beginnerGray.svg") no-repeat; }
   figure .intermediate {
     height: 36px;
     padding-top: 33px;
-    background: url("intermediate.svg") no-repeat; }
+    background: url("res/intermediate.svg") no-repeat; }
     figure .intermediate.like {
-      background: url("intermediateBlack.svg") no-repeat; }
+      background: url("res/intermediateBlack.svg") no-repeat; }
     figure .intermediate.dislike {
-      background: url("intermediateGray.svg") no-repeat; }
+      background: url("res/intermediateGray.svg") no-repeat; }
   figure .advanced {
     height: 53px;
     padding-top: 16px;
-    background: url("advanced.svg") no-repeat; }
+    background: url("res/advanced.svg") no-repeat; }
     figure .advanced.like {
-      background: url("advancedBlack.svg") no-repeat; }
+      background: url("res/advancedBlack.svg") no-repeat; }
     figure .advanced.dislike {
-      background: url("advancedGray.svg") no-repeat; }
+      background: url("res/advancedGray.svg") no-repeat; }
   figure .expert {
     height: 70px;
     padding-top: -1px;
-    background: url("expert.svg") no-repeat; }
+    background: url("res/expert.svg") no-repeat; }
     figure .expert.like {
-      background: url("expertBlack.svg") no-repeat; }
+      background: url("res/expertBlack.svg") no-repeat; }
     figure .expert.dislike {
-      background: url("expertGray.svg") no-repeat; }
+      background: url("res/expertGray.svg") no-repeat; }
   figure label {
     height: 110px;
     width: 100px;
