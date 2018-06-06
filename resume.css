@@ -120,6 +120,7 @@ figure {
       height: 110px;
       width: 100px;
       text-align: right;
+      -webkit-transform: rotate(-50deg);
       transform: rotate(-50deg);
       white-space: nowrap;
       font-family: Calibri;
