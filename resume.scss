@@ -10,6 +10,12 @@ $advancedHeight:        $expertHeight - $masterySpacing;
 $intermediateHeight:    $advancedHeight - $masterySpacing;
 $beginnerHeight:        $intermediateHeight - $masterySpacing;
 
+// TODO: I have no idea why this 9px matter to gridlines, but doesn't affect bars...
+$beginnerPostion: $barHeight - $beginnerHeight - $bottomBuffer + 9px;
+$intermediatePostion: $barHeight - $intermediateHeight - $bottomBuffer + 9px;
+$advancedPostion: $barHeight - $advancedHeight - $bottomBuffer + 9px;
+$expertPostion: $barHeight - $expertHeight - $bottomBuffer + 9px;
+
 body {
     margin: 5%;
 }
@@ -81,74 +87,6 @@ body {
     justify-content: center;
 }
 
-line {
-    width: 100%;
-    border-bottom: 1px dotted rgba(0, 0, 0, 0.3); 
-}
-
-.gridLine {
-    width: auto;
-    left: $labelSpacing;
-    right: 0;
-    padding-top: 10px;
-    position: absolute;
-}
-
-.mastery {
-    width: 100%;
-    float: left;
-}
-
-.mastery ul {
-    padding: 0px;
-    margin: 20px 0 0 0;
-}
-
-.legend {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    .like {
-        background: url("res/like.svg") no-repeat;
-        height: 32px;
-        width: 32px;
-        margin: 4px;
-    }
-    .dislike {
-        background: url("res/dislike.svg") no-repeat;
-        height: 32px;
-        width: 32px;
-        margin: 4px;
-
-    }
-}
-
-.mastery ul li {
-    list-style-type: none;
-    text-align: right;
-    height: 17px;
-    font-style: italic;
-    font-family: Georgia;
-    font-weight: bold;
-    font-size: 11px;
-}
-
-.graph {
-    display: flex;
-    position: relative;
-}
-
-.grid {
-    width: 0px;
-    padding: 0px;
-}
-
-.grid li {
-    list-style-type: none;
-    height: 17px;
-}
-
 // @media (max-width: 991px) {
 //     .skills ul li {
 //         font-size: 10px;
@@ -179,6 +117,73 @@ figure {
     display: flex;
     position: relative;
 
+    .mastery {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 20px;
+        width: 100%;
+        float: left;
+
+        .grid {
+            height: 17px;
+        }
+
+        .gridLine {
+            display: flex;
+            width: auto;
+            left: $labelSpacing;
+            right: 0;
+            position: absolute;
+            border-bottom: 1px dotted rgba(0, 0, 0, 0.3); 
+        }
+    
+        & .beginner {
+            padding-top: $beginnerPostion;
+        }
+
+        & .intermediate {
+            padding-top: $intermediatePostion;
+        }
+
+        & .advanced {
+            padding-top: $advancedPostion;
+        }
+
+        & .expert {
+            padding-top: $expertPostion;
+        }
+    
+        label {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            font-style: italic;
+            font-family: Georgia;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .legend {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        
+            .like {
+                background: url("res/like.svg") no-repeat;
+                height: 32px;
+                width: 32px;
+                margin: 4px;
+            }
+            .dislike {
+                background: url("res/dislike.svg") no-repeat;
+                height: 32px;
+                width: 32px;
+                margin: 4px;
+            }
+        }
+    }
+
     .skill {
         display: flex;
         width: 50px;
@@ -193,113 +198,122 @@ figure {
         right: 0px;
     }
 
-    p {
-        position: absolute;
-        top: 75px;
-        width: 100%;
-        text-align: center;
-        font-family: Calibri;
-        color: #fff;
-        font-size: 12px;
-        z-index: 100;
-        padding: 0px;
-        margin: 0px;
-    }
-
-    .bar {
-        bottom: 72;
+    .graph {
         display: flex;
-        align-self: flex-end;
-        width: $barWidth;
-        background: url("res/bar.svg") no-repeat;
-        background-origin: content-box;
-        font-size: 11px;
-        z-index: 300;
-        margin-bottom: 40px;
-    }
-    
-    .frontend {
-        @include skillGroup;
-        & .graph-header {
-            margin-left: 40px;
-            background-color: #444444;
-        }
-        margin-left: -$labelSpacing;
-        padding-left: 6px;
-        padding-right: 30px;
-    }
-    
-    .programming {
-        @include skillGroup;
-        & .graph-header {
-            background-color: #888888;
-        }
-        padding-right: 30px;
-    }
-    
-    .technical {
-        @include skillGroup;
-        & .graph-header {
-            background-color: #444444;
-        }
-        padding-right: 6px;
-    }
+        position: relative;
 
-    .beginner {
-        height: $beginnerHeight;
-        padding-top: $barHeight - $beginnerHeight - $bottomBuffer;
-        background: url("res/beginner.svg") no-repeat;
-        &.like {
-            background: url("res/beginnerBlack.svg") no-repeat;
+        label {
+            height: 110px;
+            width: 100px;
+            text-align: right;
+            transform: rotate(-50deg);
+            white-space: nowrap;
+            font-family: Calibri;
+            font-size: 10pt;
         }
-        &.dislike {
-            background: url("res/beginnerGray.svg") no-repeat;
-        }
-    }
-    
-    .intermediate {
-        height: $intermediateHeight;
-        padding-top: $barHeight - $intermediateHeight - $bottomBuffer;
-        background: url("res/intermediate.svg") no-repeat;
-        &.like {
-            background: url("res/intermediateBlack.svg") no-repeat;
-        }
-        &.dislike {
-            background: url("res/intermediateGray.svg") no-repeat;
-        }
-    }
-    
-    .advanced {
-        height: $advancedHeight;
-        padding-top: $barHeight - $advancedHeight - $bottomBuffer;
-        background: url("res/advanced.svg") no-repeat;
-        &.like {
-            background: url("res/advancedBlack.svg") no-repeat;
-        }
-        &.dislike {
-            background: url("res/advancedGray.svg") no-repeat;
-        }
-    }
-    
-    .expert {
-        height: $expertHeight;
-        padding-top: $barHeight - $expertHeight - $bottomBuffer;
-        background: url("res/expert.svg") no-repeat;
-        &.like {
-            background: url("res/expertBlack.svg") no-repeat;
-        }
-        &.dislike {
-            background: url("res/expertGray.svg") no-repeat;
-        }
-    }
 
-    & label {
-        height: 110px;
-        width: 100px;
-        text-align: right;
-        transform: rotate(-50deg);
-        white-space: nowrap;
-        font-family: Calibri;
-        font-size: 10pt;
+        .chart {
+            display: flex;
+
+            p {
+                position: absolute;
+                top: 75px;
+                width: 100%;
+                text-align: center;
+                font-family: Calibri;
+                color: #fff;
+                font-size: 12px;
+                z-index: 100;
+                padding: 0px;
+                margin: 0px;
+            }
+        
+            .bar {
+                bottom: 72;
+                display: flex;
+                align-self: flex-end;
+                width: $barWidth;
+                background: url("res/bar.svg") no-repeat;
+                background-origin: content-box;
+                font-size: 11px;
+                z-index: 300;
+                margin-bottom: 40px;
+            }
+            
+            .frontend {
+                @include skillGroup;
+                & .graph-header {
+                    margin-left: 40px;
+                    background-color: #444444;
+                }
+                margin-left: -$labelSpacing;
+                padding-left: 6px;
+                padding-right: 30px;
+            }
+            
+            .programming {
+                @include skillGroup;
+                & .graph-header {
+                    background-color: #888888;
+                }
+                padding-right: 30px;
+            }
+            
+            .technical {
+                @include skillGroup;
+                & .graph-header {
+                    background-color: #444444;
+                }
+                padding-right: 6px;
+            }
+        
+            & .beginner {
+                height: $beginnerHeight;
+                padding-top: $beginnerPostion;
+                background: url("res/beginner.svg") no-repeat;
+                &.like {
+                    background: url("res/beginnerBlack.svg") no-repeat;
+                }
+                &.dislike {
+                    background: url("res/beginnerGray.svg") no-repeat;
+                }
+            }
+            
+            .intermediate {
+                height: $intermediateHeight;
+                padding-top: $intermediatePostion;
+                background: url("res/intermediate.svg") no-repeat;
+                &.like {
+                    background: url("res/intermediateBlack.svg") no-repeat;
+                }
+                &.dislike {
+                    background: url("res/intermediateGray.svg") no-repeat;
+                }
+            }
+            
+            .advanced {
+                height: $advancedHeight;
+                padding-top: $advancedPostion;
+                background: url("res/advanced.svg") no-repeat;
+                &.like {
+                    background: url("res/advancedBlack.svg") no-repeat;
+                }
+                &.dislike {
+                    background: url("res/advancedGray.svg") no-repeat;
+                }
+            }
+            
+            .expert {
+                height: $expertHeight;
+                padding-top: $expertPostion;
+                background: url("res/expert.svg") no-repeat;
+                &.like {
+                    background: url("res/expertBlack.svg") no-repeat;
+                }
+                &.dislike {
+                    background: url("res/expertGray.svg") no-repeat;
+                }
+            }
+        }
     }
 }

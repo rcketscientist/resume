@@ -54,64 +54,55 @@ body {
   flex-direction: row;
   justify-content: center; }
 
-line {
-  width: 100%;
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.3); }
-
-.gridLine {
-  width: auto;
-  left: 20px;
-  right: 0;
-  padding-top: 10px;
-  position: absolute; }
-
-.mastery {
-  width: 100%;
-  float: left; }
-
-.mastery ul {
-  padding: 0px;
-  margin: 20px 0 0 0; }
-
-.legend {
-  display: flex;
-  flex-direction: row;
-  align-items: center; }
-  .legend .like {
-    background: url("res/like.svg") no-repeat;
-    height: 32px;
-    width: 32px;
-    margin: 4px; }
-  .legend .dislike {
-    background: url("res/dislike.svg") no-repeat;
-    height: 32px;
-    width: 32px;
-    margin: 4px; }
-
-.mastery ul li {
-  list-style-type: none;
-  text-align: right;
-  height: 17px;
-  font-style: italic;
-  font-family: Georgia;
-  font-weight: bold;
-  font-size: 11px; }
-
-.graph {
-  display: flex;
-  position: relative; }
-
-.grid {
-  width: 0px;
-  padding: 0px; }
-
-.grid li {
-  list-style-type: none;
-  height: 17px; }
-
 figure {
   display: flex;
   position: relative; }
+  figure .mastery {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+    width: 100%;
+    float: left; }
+    figure .mastery .grid {
+      height: 17px; }
+    figure .mastery .gridLine {
+      display: flex;
+      width: auto;
+      left: 20px;
+      right: 0;
+      position: absolute;
+      border-bottom: 1px dotted rgba(0, 0, 0, 0.3); }
+    figure .mastery .beginner {
+      padding-top: 59px; }
+    figure .mastery .intermediate {
+      padding-top: 42px; }
+    figure .mastery .advanced {
+      padding-top: 25px; }
+    figure .mastery .expert {
+      padding-top: 8px; }
+    figure .mastery label {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      font-style: italic;
+      font-family: Georgia;
+      font-weight: bold;
+      font-size: 11px; }
+    figure .mastery .legend {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      figure .mastery .legend .like {
+        background: url("res/like.svg") no-repeat;
+        height: 32px;
+        width: 32px;
+        margin: 4px; }
+      figure .mastery .legend .dislike {
+        background: url("res/dislike.svg") no-repeat;
+        height: 32px;
+        width: 32px;
+        margin: 4px; }
   figure .skill {
     display: flex;
     width: 50px;
@@ -122,91 +113,96 @@ figure {
     height: 18px;
     left: 0px;
     right: 0px; }
-  figure p {
-    position: absolute;
-    top: 75px;
-    width: 100%;
-    text-align: center;
-    font-family: Calibri;
-    color: #fff;
-    font-size: 12px;
-    z-index: 100;
-    padding: 0px;
-    margin: 0px; }
-  figure .bar {
-    bottom: 72;
+  figure .graph {
     display: flex;
-    align-self: flex-end;
-    width: 8px;
-    background: url("res/bar.svg") no-repeat;
-    background-origin: content-box;
-    font-size: 11px;
-    z-index: 300;
-    margin-bottom: 40px; }
-  figure .frontend {
-    display: flex;
-    margin-top: 25px;
-    font-size: 12px;
-    position: relative;
-    margin-left: -20px;
-    padding-left: 6px;
-    padding-right: 30px; }
-    figure .frontend .graph-header {
-      margin-left: 40px;
-      background-color: #444444; }
-  figure .programming {
-    display: flex;
-    margin-top: 25px;
-    font-size: 12px;
-    position: relative;
-    padding-right: 30px; }
-    figure .programming .graph-header {
-      background-color: #888888; }
-  figure .technical {
-    display: flex;
-    margin-top: 25px;
-    font-size: 12px;
-    position: relative;
-    padding-right: 6px; }
-    figure .technical .graph-header {
-      background-color: #444444; }
-  figure .beginner {
-    height: 19px;
-    padding-top: 50px;
-    background: url("res/beginner.svg") no-repeat; }
-    figure .beginner.like {
-      background: url("res/beginnerBlack.svg") no-repeat; }
-    figure .beginner.dislike {
-      background: url("res/beginnerGray.svg") no-repeat; }
-  figure .intermediate {
-    height: 36px;
-    padding-top: 33px;
-    background: url("res/intermediate.svg") no-repeat; }
-    figure .intermediate.like {
-      background: url("res/intermediateBlack.svg") no-repeat; }
-    figure .intermediate.dislike {
-      background: url("res/intermediateGray.svg") no-repeat; }
-  figure .advanced {
-    height: 53px;
-    padding-top: 16px;
-    background: url("res/advanced.svg") no-repeat; }
-    figure .advanced.like {
-      background: url("res/advancedBlack.svg") no-repeat; }
-    figure .advanced.dislike {
-      background: url("res/advancedGray.svg") no-repeat; }
-  figure .expert {
-    height: 70px;
-    padding-top: -1px;
-    background: url("res/expert.svg") no-repeat; }
-    figure .expert.like {
-      background: url("res/expertBlack.svg") no-repeat; }
-    figure .expert.dislike {
-      background: url("res/expertGray.svg") no-repeat; }
-  figure label {
-    height: 110px;
-    width: 100px;
-    text-align: right;
-    transform: rotate(-50deg);
-    white-space: nowrap;
-    font-family: Calibri;
-    font-size: 10pt; }
+    position: relative; }
+    figure .graph label {
+      height: 110px;
+      width: 100px;
+      text-align: right;
+      transform: rotate(-50deg);
+      white-space: nowrap;
+      font-family: Calibri;
+      font-size: 10pt; }
+    figure .graph .chart {
+      display: flex; }
+      figure .graph .chart p {
+        position: absolute;
+        top: 75px;
+        width: 100%;
+        text-align: center;
+        font-family: Calibri;
+        color: #fff;
+        font-size: 12px;
+        z-index: 100;
+        padding: 0px;
+        margin: 0px; }
+      figure .graph .chart .bar {
+        bottom: 72;
+        display: flex;
+        align-self: flex-end;
+        width: 8px;
+        background: url("res/bar.svg") no-repeat;
+        background-origin: content-box;
+        font-size: 11px;
+        z-index: 300;
+        margin-bottom: 40px; }
+      figure .graph .chart .frontend {
+        display: flex;
+        margin-top: 25px;
+        font-size: 12px;
+        position: relative;
+        margin-left: -20px;
+        padding-left: 6px;
+        padding-right: 30px; }
+        figure .graph .chart .frontend .graph-header {
+          margin-left: 40px;
+          background-color: #444444; }
+      figure .graph .chart .programming {
+        display: flex;
+        margin-top: 25px;
+        font-size: 12px;
+        position: relative;
+        padding-right: 30px; }
+        figure .graph .chart .programming .graph-header {
+          background-color: #888888; }
+      figure .graph .chart .technical {
+        display: flex;
+        margin-top: 25px;
+        font-size: 12px;
+        position: relative;
+        padding-right: 6px; }
+        figure .graph .chart .technical .graph-header {
+          background-color: #444444; }
+      figure .graph .chart .beginner {
+        height: 19px;
+        padding-top: 59px;
+        background: url("res/beginner.svg") no-repeat; }
+        figure .graph .chart .beginner.like {
+          background: url("res/beginnerBlack.svg") no-repeat; }
+        figure .graph .chart .beginner.dislike {
+          background: url("res/beginnerGray.svg") no-repeat; }
+      figure .graph .chart .intermediate {
+        height: 36px;
+        padding-top: 42px;
+        background: url("res/intermediate.svg") no-repeat; }
+        figure .graph .chart .intermediate.like {
+          background: url("res/intermediateBlack.svg") no-repeat; }
+        figure .graph .chart .intermediate.dislike {
+          background: url("res/intermediateGray.svg") no-repeat; }
+      figure .graph .chart .advanced {
+        height: 53px;
+        padding-top: 25px;
+        background: url("res/advanced.svg") no-repeat; }
+        figure .graph .chart .advanced.like {
+          background: url("res/advancedBlack.svg") no-repeat; }
+        figure .graph .chart .advanced.dislike {
+          background: url("res/advancedGray.svg") no-repeat; }
+      figure .graph .chart .expert {
+        height: 70px;
+        padding-top: 8px;
+        background: url("res/expert.svg") no-repeat; }
+        figure .graph .chart .expert.like {
+          background: url("res/expertBlack.svg") no-repeat; }
+        figure .graph .chart .expert.dislike {
+          background: url("res/expertGray.svg") no-repeat; }
