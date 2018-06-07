@@ -107,7 +107,7 @@ figure {
       display: -ms-flexbox;
       display: flex;
       width: auto;
-      left: 20px;
+      left: 10px;
       right: 0;
       position: absolute;
       border-bottom: 1px dotted rgba(0, 0, 0, 0.3); }
@@ -195,7 +195,12 @@ figure {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
-      display: flex; }
+      display: flex;
+      margin-left: 10px;
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, transparent), color-stop(6%, #bbb), color-stop(6%, transparent), color-stop(30%, transparent), color-stop(31%, #bbb), color-stop(31%, transparent), color-stop(55%, transparent), color-stop(56%, #bbb), color-stop(56%, transparent), color-stop(80%, transparent), color-stop(81%, #bbb), color-stop(81%, transparent));
+      background: -webkit-linear-gradient(transparent 5%, #bbb 6%, transparent 6%, transparent 30%, #bbb 31%, transparent 31%, transparent 55%, #bbb 56%, transparent 56%, transparent 80%, #bbb 81%, transparent 81%);
+      background: -o-linear-gradient(transparent 5%, #bbb 6%, transparent 6%, transparent 30%, #bbb 31%, transparent 31%, transparent 55%, #bbb 56%, transparent 56%, transparent 80%, #bbb 81%, transparent 81%);
+      background: linear-gradient(transparent 5%, #bbb 6%, transparent 6%, transparent 30%, #bbb 31%, transparent 31%, transparent 55%, #bbb 56%, transparent 56%, transparent 80%, #bbb 81%, transparent 81%); }
       figure .graph .chart p {
         position: absolute;
         top: 75px;
@@ -207,22 +212,6 @@ figure {
         z-index: 100;
         padding: 0px;
         margin: 0px; }
-      figure .graph .chart .bar {
-        bottom: 72;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-align-self: flex-end;
-            -ms-flex-item-align: end;
-                align-self: flex-end;
-        width: 8px;
-        background: url("res/bar.svg") no-repeat;
-        -webkit-background-origin: content-box;
-                background-origin: content-box;
-        font-size: 11px;
-        z-index: 300;
-        margin-bottom: 40px; }
       figure .graph .chart .frontend {
         display: -webkit-box;
         display: -webkit-flex;
@@ -231,11 +220,9 @@ figure {
         margin-top: 25px;
         font-size: 12px;
         position: relative;
-        margin-left: -20px;
         padding-left: 6px;
         padding-right: 30px; }
         figure .graph .chart .frontend .graph-header {
-          margin-left: 40px;
           background-color: #444444; }
       figure .graph .chart .programming {
         display: -webkit-box;
@@ -259,35 +246,49 @@ figure {
         padding-right: 6px; }
         figure .graph .chart .technical .graph-header {
           background-color: #444444; }
-      figure .graph .chart .beginner {
-        height: 19px;
-        padding-top: 59px;
-        background: url("res/beginner.svg") no-repeat; }
-        figure .graph .chart .beginner.like {
-          background: url("res/beginnerBlack.svg") no-repeat; }
-        figure .graph .chart .beginner.dislike {
-          background: url("res/beginnerGray.svg") no-repeat; }
-      figure .graph .chart .intermediate {
-        height: 36px;
-        padding-top: 42px;
-        background: url("res/intermediate.svg") no-repeat; }
-        figure .graph .chart .intermediate.like {
-          background: url("res/intermediateBlack.svg") no-repeat; }
-        figure .graph .chart .intermediate.dislike {
-          background: url("res/intermediateGray.svg") no-repeat; }
-      figure .graph .chart .advanced {
-        height: 53px;
-        padding-top: 25px;
-        background: url("res/advanced.svg") no-repeat; }
-        figure .graph .chart .advanced.like {
-          background: url("res/advancedBlack.svg") no-repeat; }
-        figure .graph .chart .advanced.dislike {
-          background: url("res/advancedGray.svg") no-repeat; }
-      figure .graph .chart .expert {
-        height: 70px;
-        padding-top: 8px;
-        background: url("res/expert.svg") no-repeat; }
-        figure .graph .chart .expert.like {
-          background: url("res/expertBlack.svg") no-repeat; }
-        figure .graph .chart .expert.dislike {
-          background: url("res/expertGray.svg") no-repeat; }
+      figure .graph .chart .bar {
+        bottom: 72;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-self: flex-end;
+            -ms-flex-item-align: end;
+                align-self: flex-end;
+        width: 8px;
+        -webkit-background-origin: content-box;
+                background-origin: content-box;
+        z-index: 300;
+        margin-bottom: 40px; }
+        figure .graph .chart .bar.beginner {
+          height: 19px;
+          padding-top: 59px;
+          background: url("res/beginner.svg") no-repeat; }
+          figure .graph .chart .bar.beginner.like {
+            background: url("res/beginnerBlack.svg") no-repeat; }
+          figure .graph .chart .bar.beginner.dislike {
+            background: url("res/beginnerGray.svg") no-repeat; }
+        figure .graph .chart .bar.intermediate {
+          height: 36px;
+          padding-top: 42px;
+          background: url("res/intermediate.svg") no-repeat; }
+          figure .graph .chart .bar.intermediate.like {
+            background: url("res/intermediateBlack.svg") no-repeat; }
+          figure .graph .chart .bar.intermediate.dislike {
+            background: url("res/intermediateGray.svg") no-repeat; }
+        figure .graph .chart .bar.advanced {
+          height: 53px;
+          padding-top: 25px;
+          background: url("res/advanced.svg") no-repeat; }
+          figure .graph .chart .bar.advanced.like {
+            background: url("res/advancedBlack.svg") no-repeat; }
+          figure .graph .chart .bar.advanced.dislike {
+            background: url("res/advancedGray.svg") no-repeat; }
+        figure .graph .chart .bar.expert {
+          height: 70px;
+          padding-top: 8px;
+          background: url("res/expert.svg") no-repeat; }
+          figure .graph .chart .bar.expert.like {
+            background: url("res/expertBlack.svg") no-repeat; }
+          figure .graph .chart .bar.expert.dislike {
+            background: url("res/expertGray.svg") no-repeat; }

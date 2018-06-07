@@ -132,7 +132,7 @@ figure {
         .gridLine {
             display: flex;
             width: auto;
-            left: $labelSpacing;
+            left: 10px;
             right: 0;
             position: absolute;
             border-bottom: 1px dotted rgba(0, 0, 0, 0.3); 
@@ -214,7 +214,16 @@ figure {
 
         .chart {
             display: flex;
-
+            margin-left: 10px;
+            background: linear-gradient( 
+                transparent 5%,
+                #bbb 6%, transparent 6%,
+                transparent 30%,
+                #bbb 31%, transparent 31%,
+                transparent 55%,
+                #bbb 56%, transparent 56%,
+                transparent 80%,
+                #bbb 81%, transparent 81%);
             p {
                 position: absolute;
                 top: 75px;
@@ -227,26 +236,12 @@ figure {
                 padding: 0px;
                 margin: 0px;
             }
-        
-            .bar {
-                bottom: 72;
-                display: flex;
-                align-self: flex-end;
-                width: $barWidth;
-                background: url("res/bar.svg") no-repeat;
-                background-origin: content-box;
-                font-size: 11px;
-                z-index: 300;
-                margin-bottom: 40px;
-            }
-            
+                   
             .frontend {
                 @include skillGroup;
                 & .graph-header {
-                    margin-left: 40px;
                     background-color: #444444;
                 }
-                margin-left: -$labelSpacing;
                 padding-left: 6px;
                 padding-right: 30px;
             }
@@ -266,52 +261,62 @@ figure {
                 }
                 padding-right: 6px;
             }
-        
-            & .beginner {
-                height: $beginnerHeight;
-                padding-top: $beginnerPostion;
-                background: url("res/beginner.svg") no-repeat;
-                &.like {
-                    background: url("res/beginnerBlack.svg") no-repeat;
+
+            .bar {
+                bottom: 72;
+                display: flex;
+                align-self: flex-end;
+                width: $barWidth;
+                background-origin: content-box;
+                z-index: 300;
+                margin-bottom: 40px;
+
+                &.beginner {
+                    height: $beginnerHeight;
+                    padding-top: $beginnerPostion;
+                    background: url("res/beginner.svg") no-repeat;
+                    &.like {
+                        background: url("res/beginnerBlack.svg") no-repeat;
+                    }
+                    &.dislike {
+                        background: url("res/beginnerGray.svg") no-repeat;
+                    }
                 }
-                &.dislike {
-                    background: url("res/beginnerGray.svg") no-repeat;
+                
+                &.intermediate {
+                    height: $intermediateHeight;
+                    padding-top: $intermediatePostion;
+                    background: url("res/intermediate.svg") no-repeat;
+                    &.like {
+                        background: url("res/intermediateBlack.svg") no-repeat;
+                    }
+                    &.dislike {
+                        background: url("res/intermediateGray.svg") no-repeat;
+                    }
                 }
-            }
-            
-            .intermediate {
-                height: $intermediateHeight;
-                padding-top: $intermediatePostion;
-                background: url("res/intermediate.svg") no-repeat;
-                &.like {
-                    background: url("res/intermediateBlack.svg") no-repeat;
+                
+                &.advanced {
+                    height: $advancedHeight;
+                    padding-top: $advancedPostion;
+                    background: url("res/advanced.svg") no-repeat;
+                    &.like {
+                        background: url("res/advancedBlack.svg") no-repeat;
+                    }
+                    &.dislike {
+                        background: url("res/advancedGray.svg") no-repeat;
+                    }
                 }
-                &.dislike {
-                    background: url("res/intermediateGray.svg") no-repeat;
-                }
-            }
-            
-            .advanced {
-                height: $advancedHeight;
-                padding-top: $advancedPostion;
-                background: url("res/advanced.svg") no-repeat;
-                &.like {
-                    background: url("res/advancedBlack.svg") no-repeat;
-                }
-                &.dislike {
-                    background: url("res/advancedGray.svg") no-repeat;
-                }
-            }
-            
-            .expert {
-                height: $expertHeight;
-                padding-top: $expertPostion;
-                background: url("res/expert.svg") no-repeat;
-                &.like {
-                    background: url("res/expertBlack.svg") no-repeat;
-                }
-                &.dislike {
-                    background: url("res/expertGray.svg") no-repeat;
+                
+                &.expert {
+                    height: $expertHeight;
+                    padding-top: $expertPostion;
+                    background: url("res/expert.svg") no-repeat;
+                    &.like {
+                        background: url("res/expertBlack.svg") no-repeat;
+                    }
+                    &.dislike {
+                        background: url("res/expertGray.svg") no-repeat;
+                    }
                 }
             }
         }
