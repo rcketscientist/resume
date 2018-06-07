@@ -9,10 +9,12 @@ body {
 
 .heading {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   width: 100%;
@@ -23,9 +25,11 @@ body {
   font-weight: bold;
   font-size: 12pt; }
   .heading .left {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+    -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
     -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
     font-family: Garamond;
@@ -59,30 +63,37 @@ body {
 
 .skillSection {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
 
 figure {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   position: relative; }
   figure .mastery {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: end;
+    -webkit-align-items: flex-end;
         -ms-flex-align: end;
             align-items: flex-end;
     margin-top: 20px;
@@ -92,6 +103,7 @@ figure {
       height: 17px; }
     figure .mastery .gridLine {
       display: -webkit-box;
+      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       width: auto;
@@ -109,10 +121,12 @@ figure {
       padding-top: 8px; }
     figure .mastery label {
       display: -webkit-box;
+      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
           -ms-flex-direction: row;
               flex-direction: row;
       list-style-type: none;
@@ -122,13 +136,16 @@ figure {
       font-size: 11px; }
     figure .mastery .legend {
       display: -webkit-box;
+      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
           -ms-flex-direction: row;
               flex-direction: row;
       -webkit-box-align: center;
+      -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center; }
       figure .mastery .legend .like {
@@ -143,11 +160,13 @@ figure {
         margin: 4px; }
   figure .skill {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     width: 50px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column; }
   figure .graph-header {
@@ -158,6 +177,7 @@ figure {
     right: 0px; }
   figure .graph {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     position: relative; }
@@ -173,6 +193,7 @@ figure {
       font-size: 10pt; }
     figure .graph .chart {
       display: -webkit-box;
+      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; }
       figure .graph .chart p {
@@ -189,18 +210,22 @@ figure {
       figure .graph .chart .bar {
         bottom: 72;
         display: -webkit-box;
+        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        -ms-flex-item-align: end;
-            align-self: flex-end;
+        -webkit-align-self: flex-end;
+            -ms-flex-item-align: end;
+                align-self: flex-end;
         width: 8px;
         background: url("res/bar.svg") no-repeat;
-        background-origin: content-box;
+        -webkit-background-origin: content-box;
+                background-origin: content-box;
         font-size: 11px;
         z-index: 300;
         margin-bottom: 40px; }
       figure .graph .chart .frontend {
         display: -webkit-box;
+        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         margin-top: 25px;
@@ -214,6 +239,7 @@ figure {
           background-color: #444444; }
       figure .graph .chart .programming {
         display: -webkit-box;
+        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         margin-top: 25px;
@@ -224,6 +250,7 @@ figure {
           background-color: #888888; }
       figure .graph .chart .technical {
         display: -webkit-box;
+        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         margin-top: 25px;

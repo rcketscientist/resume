@@ -6,7 +6,7 @@ var autoprefixer = require("gulp-autoprefixer");
 gulp.task('sass', function () {
     return gulp.src('resume.scss')
       .pipe(sass().on('error', sass.logError))
-      .pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
+      .pipe(autoprefixer("last 20 version", "safari 5", "ie 8", "ie 9"))
       .pipe(gulp.dest('.'));
 });
 
