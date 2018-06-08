@@ -8,15 +8,8 @@ body {
   border-bottom-style: double; }
 
 .heading {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   width: 100%;
   border-bottom-style: solid;
   border-bottom-width: thick;
@@ -25,13 +18,8 @@ body {
   font-weight: bold;
   font-size: 12pt; }
   .heading .left {
-    -webkit-align-self: flex-end;
-        -ms-flex-item-align: end;
-            align-self: flex-end;
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    align-self: flex-end;
+    flex-grow: 1;
     font-family: Garamond;
     font-size: 26pt;
     border-bottom-style: none;
@@ -62,24 +50,11 @@ body {
   font-weight: bold; }
 
 .skillSection {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  flex-direction: row;
+  justify-content: center; }
 
 figure {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   position: relative;
   margin-left: auto;
@@ -124,9 +99,6 @@ figure {
     left: 0px;
     right: 0px; }
   figure .chart {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex; }
     figure .chart p {
       position: absolute;
@@ -146,9 +118,7 @@ figure {
         width: 0px;
         direction: rtl;
         margin: 0 auto;
-        -webkit-transform: rotate(-50deg);
-            -ms-transform: rotate(-50deg);
-                transform: rotate(-50deg);
+        transform: rotate(-50deg);
         white-space: nowrap;
         font-family: Calibri;
         font-size: 10pt; }
@@ -156,8 +126,7 @@ figure {
         bottom: 72;
         margin: auto;
         width: 8px;
-        -webkit-background-origin: content-box;
-                background-origin: content-box;
+        background-origin: content-box;
         z-index: 300;
         margin-bottom: 12px; }
         figure .chart .skill .bar.beginner {
@@ -193,9 +162,6 @@ figure {
           figure .chart .skill .bar.expert.dislike {
             background: url("res/expertGray.svg") no-repeat; }
     figure .chart .frontend {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
       display: flex;
       margin-top: 10px;
       font-size: 12px;
@@ -203,9 +169,6 @@ figure {
       figure .chart .frontend .graph-header {
         background-color: #444444; }
     figure .chart .programming {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
       display: flex;
       margin-top: 10px;
       font-size: 12px;
@@ -213,9 +176,6 @@ figure {
       figure .chart .programming .graph-header {
         background-color: #888888; }
     figure .chart .technical {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
       display: flex;
       margin-top: 10px;
       font-size: 12px;
