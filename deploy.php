@@ -45,8 +45,8 @@ if (!$allowed) {
 flush();
 
 require_once '/var/secure/convertapi.php';
-$convertUrl = "https://v2.convertapi.com/web/to/pdf?Secret=$convertapiKey&download=inline&url=http://resume.anthonymandra.com"
-$convertCmd = "wget \"$convertUrl\" -O resumeMandra.pdf"
+$convertUrl = "https://v2.convertapi.com/web/to/pdf?Secret=$convertapiKey&download=inline&url=http://resume.anthonymandra.com";
+$convertCmd = "wget \"$convertUrl\" -O resumeMandra.pdf";
 
 // Actually run the update
 $commands = array(
