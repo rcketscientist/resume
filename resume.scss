@@ -109,66 +109,46 @@ body {
 figure {
     @mixin skillGroup {
         display: flex;
-        margin-top: 25px;
+        margin-top: 10px;
         font-size: 12px;
         position: relative;
     }
 
     display: flex;
     position: relative;
+    width: 1034;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
 
     .mastery {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        margin-top: 20px;
-        width: 100%;
-        float: left;
-
-        .grid {
-            height: 17px;
-        }
-
-        .gridLine {
-            display: flex;
-            width: auto;
-            left: 10px;
-            right: 0;
-            position: absolute;
-            border-bottom: 1px dotted rgba(0, 0, 0, 0.3); 
-        }
-    
-        & .beginner {
-            padding-top: $beginnerPostion;
-        }
-
-        & .intermediate {
-            padding-top: $intermediatePostion;
-        }
-
-        & .advanced {
-            padding-top: $advancedPostion;
-        }
-
-        & .expert {
-            padding-top: $expertPostion;
-        }
-    
-        label {
-            display: flex;
-            flex-direction: row;
-            list-style-type: none;
+        background: white;
+        list-style-type: none;
+        margin: 0;
+        margin-top: 6px;
+        padding: 0;
+        padding-right: 10px;
+   
+        li {
+            height: $masterySpacing;
             font-style: italic;
             font-family: Georgia;
             font-weight: bold;
             font-size: 11px;
+            text-align: right;
+
+            &.grid::after {
+                content: "";
+                left: 50px; // This ensures the line hides under, there must be a better way
+                right: 0;
+                position: absolute;
+                margin-top: 7px;
+                border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+                z-index: -1;
+            }
         }
 
         .legend {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        
             .like {
                 background: url("res/like.svg") no-repeat;
                 height: 32px;
@@ -184,12 +164,6 @@ figure {
         }
     }
 
-    .skill {
-        display: flex;
-        width: 50px;
-        flex-direction: column;
-    }
-
     .graph-header {
         position: absolute;
         top: 73px;
@@ -198,79 +172,44 @@ figure {
         right: 0px;
     }
 
-    .graph {
+    .chart {
         display: flex;
-        position: relative;
 
-        label {
-            height: 110px;
-            width: 100px;
-            text-align: right;
-            transform: rotate(-50deg);
-            white-space: nowrap;
+        p {
+            position: absolute;
+            top: 75px;
+            width: 100%;
+            text-align: center;
             font-family: Calibri;
-            font-size: 10pt;
+            color: #fff;
+            font-size: 12px;
+            z-index: 100;
+            padding: 0px;
+            margin: 0px;
         }
 
-        .chart {
-            display: flex;
-            margin-left: 10px;
-            background: linear-gradient( 
-                transparent 5%,
-                #bbb 6%, transparent 6%,
-                transparent 30%,
-                #bbb 31%, transparent 31%,
-                transparent 55%,
-                #bbb 56%, transparent 56%,
-                transparent 80%,
-                #bbb 81%, transparent 81%);
-            p {
-                position: absolute;
-                top: 75px;
-                width: 100%;
-                text-align: center;
+        .skill {   
+            width: 50px;
+    
+            label {
+                display: block;
+                width: 0px;     // By letting is overflow we can center the label
+                direction: rtl;
+                margin: 0 auto;
+                transform: rotate(-50deg);
+                white-space: nowrap;
                 font-family: Calibri;
-                color: #fff;
-                font-size: 12px;
-                z-index: 100;
-                padding: 0px;
-                margin: 0px;
+                font-size: 10pt;
             }
-                   
-            .frontend {
-                @include skillGroup;
-                & .graph-header {
-                    background-color: #444444;
-                }
-                padding-left: 6px;
-                padding-right: 30px;
-            }
-            
-            .programming {
-                @include skillGroup;
-                & .graph-header {
-                    background-color: #888888;
-                }
-                padding-right: 30px;
-            }
-            
-            .technical {
-                @include skillGroup;
-                & .graph-header {
-                    background-color: #444444;
-                }
-                padding-right: 6px;
-            }
-
+    
             .bar {
                 bottom: 72;
-                display: flex;
-                align-self: flex-end;
+                margin: auto;
                 width: $barWidth;
                 background-origin: content-box;
                 z-index: 300;
-                margin-bottom: 40px;
-
+                margin-bottom: 12px;
+    
                 &.beginner {
                     height: $beginnerHeight;
                     padding-top: $beginnerPostion;
@@ -318,6 +257,27 @@ figure {
                         background: url("res/expertGray.svg") no-repeat;
                     }
                 }
+            }
+        }
+                
+        .frontend {
+            @include skillGroup;
+            & .graph-header {
+                background-color: #444444;
+            }
+        }
+        
+        .programming {
+            @include skillGroup;
+            & .graph-header {
+                background-color: #888888;
+            }
+        }
+        
+        .technical {
+            @include skillGroup;
+            & .graph-header {
+                background-color: #444444;
             }
         }
     }
