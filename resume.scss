@@ -148,6 +148,10 @@ figure {
         }
 
         .legend {
+            display: flex;
+            flex-direction: row;
+            // align-items: center;
+
             .like {
                 background: url("res/like.svg") no-repeat;
                 height: 32px;

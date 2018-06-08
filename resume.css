@@ -82,16 +82,19 @@ figure {
         margin-top: 7px;
         border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
         z-index: -1; }
-    figure .mastery .legend .like {
-      background: url("res/like.svg") no-repeat;
-      height: 32px;
-      width: 32px;
-      margin: 4px; }
-    figure .mastery .legend .dislike {
-      background: url("res/dislike.svg") no-repeat;
-      height: 32px;
-      width: 32px;
-      margin: 4px; }
+    figure .mastery .legend {
+      display: flex;
+      flex-direction: row; }
+      figure .mastery .legend .like {
+        background: url("res/like.svg") no-repeat;
+        height: 32px;
+        width: 32px;
+        margin: 4px; }
+      figure .mastery .legend .dislike {
+        background: url("res/dislike.svg") no-repeat;
+        height: 32px;
+        width: 32px;
+        margin: 4px; }
   figure .graph-header {
     position: absolute;
     top: 73px;

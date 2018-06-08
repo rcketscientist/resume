@@ -43,13 +43,18 @@ if (!$allowed) {
     exit;
 }
 flush();
+
+require_once '/var/secure/convertapi.php';
+$convertUrl = "https://v2.convertapi.com/web/to/pdf?Secret=$convertapiKey&download=inline&url=http://resume.anthonymandra.com"
+$convertCmd = "wget \"$convertUrl\" -O resumeMandra.pdf
+
 // Actually run the update
 $commands = array(
 	'echo $PWD',
 	'whoami',
 	'git pull',
-    'git status',
-    // TODO: Run convert to PDF if one works
+	'git status',
+	$convertCmd
 );
 $output = "\n";
 $log = "####### ".date('Y-m-d H:i:s'). " #######\n";
