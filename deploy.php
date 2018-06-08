@@ -54,7 +54,7 @@ $commands = array(
 	'whoami',
 	'git pull',
 	'git status',
-	$convertCmd
+	"$convertCmd"
 );
 $output = "\n";
 $log = "####### ".date('Y-m-d H:i:s'). " #######\n";
