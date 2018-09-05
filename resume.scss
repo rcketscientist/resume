@@ -17,7 +17,8 @@ $advancedPostion: $barHeight - $advancedHeight - $bottomBuffer + 9px;
 $expertPostion: $barHeight - $expertHeight - $bottomBuffer + 9px;
 
 body {
-    margin: 5%;
+    margin: 3% auto;
+    max-width: 1080px;
 }
 
 .section {

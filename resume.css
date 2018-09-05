@@ -1,5 +1,6 @@
 body {
-  margin: 5%; }
+  margin: 3% auto;
+  max-width: 1080px; }
 
 .section {
   font-family: Calibri;
