@@ -143,9 +143,7 @@ figure {
           figure .chart .skill .bar.beginner.like {
             background: url("res/beginnerBlack.svg") no-repeat; }
           figure .chart .skill .bar.beginner.dislike {
-            background: url("res/beginnerGray.svg") no-repeat;
-            stroke: pink;
-            fill: pink; }
+            background: url("res/beginnerGray.svg") no-repeat; }
         figure .chart .skill .bar.intermediate {
           height: 36px;
           padding-top: 42px;
