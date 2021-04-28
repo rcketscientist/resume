@@ -16,6 +16,12 @@ $intermediatePostion: $barHeight - $intermediateHeight - $bottomBuffer + 9px;
 $advancedPostion: $barHeight - $advancedHeight - $bottomBuffer + 9px;
 $expertPostion: $barHeight - $expertHeight - $bottomBuffer + 9px;
 
+// Enable printing images so the chart prints reasonably
+* {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+}
+
 body {
     margin: 3% auto;
     max-width: 1080px;
@@ -29,43 +35,48 @@ body {
 }
 
 .heading {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    border-bottom-style: solid;
-    border-bottom-width: thick;
-    border-bottom-color: #000;
-    font-family: Calibri;
+    display: grid;
+
+    font-family: Garamond;  
     font-weight: bold;
     font-size: 12pt;
 
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 4px;
+
+    padding-bottom: 4px;
+    border-bottom-style: solid;
+    border-bottom-width: thick;
+    border-bottom-color: #000;
+
     .left {
         align-self: flex-end;
-        flex-grow: 1;
-        font-family: Garamond;
+        grid-row: 1/-1;
         font-size: 26pt;
-        border-bottom-style: none;
-        border-top-style: none;
-        border-right-style: none;
-        border-left-style: none;
-        vertical-align: bottom;
         text-align: left;
         white-space: normal;
-        padding-bottom: 4px;
-    }
-
-    .right {
-        text-align: right;
-        font-family: Garamond;
-        font-weight: bold;
-        font-size: 12pt;
     }
 
     .details {
-        padding-bottom: 4px;
+        text-align: right;
+
+        &.print {
+            display: none;
+        }
+
+        @media print {
+            &.links {
+                display: none;
+            }
+            &.print {
+                display: flex;
+                flex-direction: column;
+            }
+        }
     }
-    
-    .links {
+     
+    .link {
         padding-left: 10px;
     }
     
@@ -87,25 +98,6 @@ body {
     flex-direction: row;
     justify-content: center;
 }
-
-// @media (max-width: 991px) {
-//     .skills ul li {
-//         font-size: 10px;
-//     }
-// }
-
-// @media (max-width: 767px) {
-//     figure {
-//         flex-direction: column;
-//     }
-// }
-
-// @media (max-width: 767px) {
-//     figure>div {
-//         height: auto;
-//         width: 100%;
-//     }
-// }
 
 figure {
     @mixin skillGroup {
@@ -151,6 +143,7 @@ figure {
         .legend {
             display: flex;
             flex-direction: row;
+            height: 32px;
 
             .like {
                 background: url("res/like.svg") no-repeat;
@@ -222,6 +215,8 @@ figure {
                     }
                     &.dislike {
                         background: url("res/beginnerGray.svg") no-repeat;
+                        stroke: pink;
+                        fill: pink;
                     }
                 }
                 

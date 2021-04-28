@@ -1,3 +1,7 @@
+* {
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important; }
+
 body {
   margin: 3% auto;
   max-width: 1080px; }
@@ -9,36 +13,34 @@ body {
   border-bottom-style: double; }
 
 .heading {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+  display: grid;
+  font-family: Garamond;
+  font-weight: bold;
+  font-size: 12pt;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
+  gap: 4px;
+  padding-bottom: 4px;
   border-bottom-style: solid;
   border-bottom-width: thick;
-  border-bottom-color: #000;
-  font-family: Calibri;
-  font-weight: bold;
-  font-size: 12pt; }
+  border-bottom-color: #000; }
   .heading .left {
     align-self: flex-end;
-    flex-grow: 1;
-    font-family: Garamond;
+    grid-row: 1/-1;
     font-size: 26pt;
-    border-bottom-style: none;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;
-    vertical-align: bottom;
     text-align: left;
-    white-space: normal;
-    padding-bottom: 4px; }
-  .heading .right {
-    text-align: right;
-    font-family: Garamond;
-    font-weight: bold;
-    font-size: 12pt; }
+    white-space: normal; }
   .heading .details {
-    padding-bottom: 4px; }
-  .heading .links {
+    text-align: right; }
+    .heading .details.print {
+      display: none; }
+    @media print {
+      .heading .details.links {
+        display: none; }
+      .heading .details.print {
+        display: flex;
+        flex-direction: column; } }
+  .heading .link {
     padding-left: 10px; }
 
 .accomplishment {
@@ -85,7 +87,8 @@ figure {
         z-index: -1; }
     figure .mastery .legend {
       display: flex;
-      flex-direction: row; }
+      flex-direction: row;
+      height: 32px; }
       figure .mastery .legend .like {
         background: url("res/like.svg") no-repeat;
         height: 32px;
@@ -140,7 +143,9 @@ figure {
           figure .chart .skill .bar.beginner.like {
             background: url("res/beginnerBlack.svg") no-repeat; }
           figure .chart .skill .bar.beginner.dislike {
-            background: url("res/beginnerGray.svg") no-repeat; }
+            background: url("res/beginnerGray.svg") no-repeat;
+            stroke: pink;
+            fill: pink; }
         figure .chart .skill .bar.intermediate {
           height: 36px;
           padding-top: 42px;
