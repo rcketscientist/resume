@@ -13,7 +13,7 @@ Local
 Server
 
 1. Sign-up: https://www.convertapi.com/
-1. /var/secure/convertapiKey.php
+1. /var/secure/convertapi.php
 
 ```php
 <?php
