@@ -34,6 +34,8 @@ body {
     border-bottom-style: double;
 }
 
+
+
 .heading {
     display: grid;
 
@@ -97,6 +99,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.about {
+    margin: 20px 10%;
+    font-family: Calibri;
+    font-size: 12pt;
 }
 
 figure {

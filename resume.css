@@ -1,16 +1,19 @@
 * {
   -webkit-print-color-adjust: exact !important;
-  color-adjust: exact !important; }
+  color-adjust: exact !important;
+}
 
 body {
   margin: 3% auto;
-  max-width: 1080px; }
+  max-width: 1080px;
+}
 
 .section {
   font-family: Calibri;
   font-size: 14pt;
   font-weight: bold;
-  border-bottom-style: double; }
+  border-bottom-style: double;
+}
 
 .heading {
   display: grid;
@@ -23,169 +26,217 @@ body {
   padding-bottom: 4px;
   border-bottom-style: solid;
   border-bottom-width: thick;
-  border-bottom-color: #000; }
-  .heading .left {
-    align-self: flex-end;
-    grid-row: 1/-1;
-    font-size: 26pt;
-    text-align: left;
-    white-space: normal; }
-  .heading .details {
-    text-align: right; }
-    .heading .details.print {
-      display: none; }
-    @media print {
-      .heading .details.links {
-        display: none; }
-      .heading .details.print {
-        display: flex;
-        flex-direction: column; } }
-  .heading .link {
-    padding-left: 10px; }
+  border-bottom-color: #000;
+}
+.heading .left {
+  align-self: flex-end;
+  grid-row: 1/-1;
+  font-size: 26pt;
+  text-align: left;
+  white-space: normal;
+}
+.heading .details {
+  text-align: right;
+}
+.heading .details.print {
+  display: none;
+}
+@media print {
+  .heading .details.links {
+    display: none;
+  }
+  .heading .details.print {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.heading .link {
+  padding-left: 10px;
+}
 
 .accomplishment {
   font-family: Calibri;
-  font-size: 12pt; }
+  font-size: 12pt;
+}
 
 .job {
   font-family: Calibri;
   font-size: 12pt;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .skillSection {
   display: flex;
   flex-direction: row;
-  justify-content: center; }
+  justify-content: center;
+}
+
+.about {
+  margin: 20px 10%;
+  font-family: Calibri;
+  font-size: 12pt;
+}
 
 figure {
   display: flex;
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 50px; }
-  figure .mastery {
-    background: white;
-    list-style-type: none;
-    margin: 0;
-    margin-top: 6px;
-    padding: 0;
-    padding-right: 10px; }
-    figure .mastery li {
-      height: 17px;
-      font-style: italic;
-      font-family: Georgia;
-      font-weight: bold;
-      font-size: 11px;
-      text-align: right; }
-      figure .mastery li.grid::after {
-        content: "";
-        left: 50px;
-        right: 0;
-        position: absolute;
-        margin-top: 7px;
-        border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
-        z-index: -1; }
-    figure .mastery .legend {
-      display: flex;
-      flex-direction: row;
-      height: 32px; }
-      figure .mastery .legend .like {
-        background: url("res/like.svg") no-repeat;
-        height: 32px;
-        width: 32px;
-        margin: 4px; }
-      figure .mastery .legend .dislike {
-        background: url("res/dislike.svg") no-repeat;
-        height: 32px;
-        width: 32px;
-        margin: 4px; }
-  figure .graph-header {
-    position: absolute;
-    top: 73px;
-    height: 18px;
-    left: 0px;
-    right: 0px; }
-  figure .chart {
-    display: flex; }
-    figure .chart p {
-      position: absolute;
-      top: 75px;
-      width: 100%;
-      text-align: center;
-      font-family: Calibri;
-      color: #fff;
-      font-size: 12px;
-      z-index: 100;
-      padding: 0px;
-      margin: 0px; }
-    figure .chart .skill {
-      width: 32px; }
-      figure .chart .skill label {
-        display: block;
-        width: 0px;
-        direction: rtl;
-        margin: 0 auto;
-        transform: rotate(-50deg);
-        white-space: nowrap;
-        font-family: Calibri;
-        font-size: 10pt; }
-      figure .chart .skill .bar {
-        bottom: 72;
-        margin: auto;
-        width: 8px;
-        background-origin: content-box;
-        z-index: 300;
-        margin-bottom: 12px; }
-        figure .chart .skill .bar.beginner {
-          height: 19px;
-          padding-top: 59px;
-          background: url("res/beginner.svg") no-repeat; }
-          figure .chart .skill .bar.beginner.like {
-            background: url("res/beginnerBlack.svg") no-repeat; }
-          figure .chart .skill .bar.beginner.dislike {
-            background: url("res/beginnerGray.svg") no-repeat; }
-        figure .chart .skill .bar.intermediate {
-          height: 36px;
-          padding-top: 42px;
-          background: url("res/intermediate.svg") no-repeat; }
-          figure .chart .skill .bar.intermediate.like {
-            background: url("res/intermediateBlack.svg") no-repeat; }
-          figure .chart .skill .bar.intermediate.dislike {
-            background: url("res/intermediateGray.svg") no-repeat; }
-        figure .chart .skill .bar.advanced {
-          height: 53px;
-          padding-top: 25px;
-          background: url("res/advanced.svg") no-repeat; }
-          figure .chart .skill .bar.advanced.like {
-            background: url("res/advancedBlack.svg") no-repeat; }
-          figure .chart .skill .bar.advanced.dislike {
-            background: url("res/advancedGray.svg") no-repeat; }
-        figure .chart .skill .bar.expert {
-          height: 70px;
-          padding-top: 8px;
-          background: url("res/expert.svg") no-repeat; }
-          figure .chart .skill .bar.expert.like {
-            background: url("res/expertBlack.svg") no-repeat; }
-          figure .chart .skill .bar.expert.dislike {
-            background: url("res/expertGray.svg") no-repeat; }
-    figure .chart .frontend {
-      display: flex;
-      margin-top: 10px;
-      font-size: 12px;
-      position: relative; }
-      figure .chart .frontend .graph-header {
-        background-color: #444444; }
-    figure .chart .programming {
-      display: flex;
-      margin-top: 10px;
-      font-size: 12px;
-      position: relative; }
-      figure .chart .programming .graph-header {
-        background-color: #757575; }
-    figure .chart .technical {
-      display: flex;
-      margin-top: 10px;
-      font-size: 12px;
-      position: relative; }
-      figure .chart .technical .graph-header {
-        background-color: #444444; }
+  margin-bottom: 50px;
+}
+figure .mastery {
+  background: white;
+  list-style-type: none;
+  margin: 0;
+  margin-top: 6px;
+  padding: 0;
+  padding-right: 10px;
+}
+figure .mastery li {
+  height: 17px;
+  font-style: italic;
+  font-family: Georgia;
+  font-weight: bold;
+  font-size: 11px;
+  text-align: right;
+}
+figure .mastery li.grid::after {
+  content: "";
+  left: 50px;
+  right: 0;
+  position: absolute;
+  margin-top: 7px;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+figure .mastery .legend {
+  display: flex;
+  flex-direction: row;
+  height: 32px;
+}
+figure .mastery .legend .like {
+  background: url("res/like.svg") no-repeat;
+  height: 32px;
+  width: 32px;
+  margin: 4px;
+}
+figure .mastery .legend .dislike {
+  background: url("res/dislike.svg") no-repeat;
+  height: 32px;
+  width: 32px;
+  margin: 4px;
+}
+figure .graph-header {
+  position: absolute;
+  top: 73px;
+  height: 18px;
+  left: 0px;
+  right: 0px;
+}
+figure .chart {
+  display: flex;
+}
+figure .chart p {
+  position: absolute;
+  top: 75px;
+  width: 100%;
+  text-align: center;
+  font-family: Calibri;
+  color: #fff;
+  font-size: 12px;
+  z-index: 100;
+  padding: 0px;
+  margin: 0px;
+}
+figure .chart .skill {
+  width: 32px;
+}
+figure .chart .skill label {
+  display: block;
+  width: 0px;
+  direction: rtl;
+  margin: 0 auto;
+  transform: rotate(-50deg);
+  white-space: nowrap;
+  font-family: Calibri;
+  font-size: 10pt;
+}
+figure .chart .skill .bar {
+  bottom: 72;
+  margin: auto;
+  width: 8px;
+  background-origin: content-box;
+  z-index: 300;
+  margin-bottom: 12px;
+}
+figure .chart .skill .bar.beginner {
+  height: 19px;
+  padding-top: 59px;
+  background: url("res/beginner.svg") no-repeat;
+}
+figure .chart .skill .bar.beginner.like {
+  background: url("res/beginnerBlack.svg") no-repeat;
+}
+figure .chart .skill .bar.beginner.dislike {
+  background: url("res/beginnerGray.svg") no-repeat;
+}
+figure .chart .skill .bar.intermediate {
+  height: 36px;
+  padding-top: 42px;
+  background: url("res/intermediate.svg") no-repeat;
+}
+figure .chart .skill .bar.intermediate.like {
+  background: url("res/intermediateBlack.svg") no-repeat;
+}
+figure .chart .skill .bar.intermediate.dislike {
+  background: url("res/intermediateGray.svg") no-repeat;
+}
+figure .chart .skill .bar.advanced {
+  height: 53px;
+  padding-top: 25px;
+  background: url("res/advanced.svg") no-repeat;
+}
+figure .chart .skill .bar.advanced.like {
+  background: url("res/advancedBlack.svg") no-repeat;
+}
+figure .chart .skill .bar.advanced.dislike {
+  background: url("res/advancedGray.svg") no-repeat;
+}
+figure .chart .skill .bar.expert {
+  height: 70px;
+  padding-top: 8px;
+  background: url("res/expert.svg") no-repeat;
+}
+figure .chart .skill .bar.expert.like {
+  background: url("res/expertBlack.svg") no-repeat;
+}
+figure .chart .skill .bar.expert.dislike {
+  background: url("res/expertGray.svg") no-repeat;
+}
+figure .chart .frontend {
+  display: flex;
+  margin-top: 10px;
+  font-size: 12px;
+  position: relative;
+}
+figure .chart .frontend .graph-header {
+  background-color: #444444;
+}
+figure .chart .programming {
+  display: flex;
+  margin-top: 10px;
+  font-size: 12px;
+  position: relative;
+}
+figure .chart .programming .graph-header {
+  background-color: #757575;
+}
+figure .chart .technical {
+  display: flex;
+  margin-top: 10px;
+  font-size: 12px;
+  position: relative;
+}
+figure .chart .technical .graph-header {
+  background-color: #444444;
+}
