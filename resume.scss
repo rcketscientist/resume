@@ -25,6 +25,10 @@ $expertPostion: $barHeight - $expertHeight - $bottomBuffer + 9px;
 body {
     margin: 3% auto;
     max-width: 1080px;
+
+    @media screen and (max-width: 1200px) {
+        margin: 3% 3%;
+    }
 }
 
 .section {
