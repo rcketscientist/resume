@@ -3,9 +3,17 @@
   color-adjust: exact !important;
 }
 
+@page {
+  margin: 0.7in;
+}
 body {
   margin: 3% auto;
   max-width: 1080px;
+}
+@media print {
+  body {
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 1200px) {
   body {

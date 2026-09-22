@@ -1,10 +1,8 @@
-Updating your resume can be a chore, especially if you end up managing multiple formats.  This setup will allow you to simply focus on your html resume and automatically convert it to pdf on push.  How does it work?
+Updating your resume can be a chore, especially if you end up managing multiple formats. This setup lets you focus on the HTML resume and automatically generate the PDF on push. GitHub Actions uses Puppeteer and headless Chromium, so it uses the same browser rendering engine as the web resume.
 
 1. Github webhook calls deploy.php on push.
 1. Deploy.php updates your server clone.
-1. Deploy.php uses https://www.convertapi.com/ to convert your hosted resume to pdf and download it locally.
-
-Please note that the conversion is not terribly robust.  Changes, especially to the graph, may corrupt the conversion.  It took quite some time to fine-tune the behavior.  Be sure to confirm the pdf after major changes.
+1. GitHub Actions commits the generated `resumeMandra.pdf` back to the repository.
 
 # Installation
 Local
@@ -12,14 +10,7 @@ Local
 
 Server
 
-1. Sign-up: https://www.convertapi.com/
-1. /var/secure/convertapi.php
-
-```php
-<?php
-$convertapiKey = 'yourSecretKey';
-?>
-```
+1. The server only needs its existing Git checkout and GitHub webhook.
 
 Github
 1. Setup webhook
@@ -27,7 +18,7 @@ Github
   * No need for a secret
   * `Just the push event`
 
-With this in place the website will be automatically updated when you push and converted to a pdf.
+With this in place the website will be automatically updated when you push. The generated PDF is committed separately by the workflow, and the webhook pulls that commit onto the server. No Node.js, Chromium, PHP conversion dependency, or SSH access from GitHub is required.
 
 # Development
 1. `npx gulp watch` (or npm -g gulp) to automatically update css

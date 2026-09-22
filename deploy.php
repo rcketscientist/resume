@@ -2,17 +2,12 @@
 // Forked from https://gist.github.com/1809044
 // Available from https://gist.github.com/nichtich/5290675#file-deploy-php
 
-require_once '/var/secure/convertapi.php';
-$convertUrl = "https://v2.convertapi.com/web/to/pdf?Secret=$convertapiKey&download=inline&url=http://resume.anthonymandra.com";
-$convertCmd = "wget \"$convertUrl\" -O resumeMandra.pdf";
-
 // Actually run the update
 $commands = array(
 	'echo $PWD',
 	'whoami',
 	'git pull',
-	'git status',
-	"$convertCmd"
+	'git status'
 );
 $output = "\n";
 $log = "####### ".date('Y-m-d H:i:s'). " #######\n";
