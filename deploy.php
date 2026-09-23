@@ -41,14 +41,6 @@ if (!hash_equals($expectedSignature, $signature)) {
 }
 
 $payload = json_decode($body, true);
-if (!is_array($payload) && strpos(isset($_SERVER['CONTENT_TYPE']) ? $_SERVER['CONTENT_TYPE'] : '', 'application/x-www-form-urlencoded') === 0) {
-	$form = array();
-	parse_str($body, $form);
-	if (isset($form['payload'])) {
-		$payload = json_decode($form['payload'], true);
-	}
-}
-
 if (!is_array($payload)) {
 	error_log('Resume deployment ignored: invalid GitHub push payload');
 	respond(400);
