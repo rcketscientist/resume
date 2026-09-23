@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Resume Sans";
+  src: url("res/fonts/Roboto-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Resume Sans";
+  src: url("res/fonts/Roboto-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Resume Serif";
+  src: url("res/fonts/EBGaramond-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Resume Serif";
+  src: url("res/fonts/EBGaramond-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
 * {
   -webkit-print-color-adjust: exact !important;
   color-adjust: exact !important;
@@ -22,7 +46,7 @@ body {
 }
 
 .section {
-  font-family: Calibri, Arial, sans-serif;
+  font-family: "Resume Sans", Arial, sans-serif;
   font-size: 14pt;
   font-weight: bold;
   border-bottom-style: double;
@@ -30,7 +54,7 @@ body {
 
 .heading {
   display: grid;
-  font-family: Garamond, Georgia, serif;
+  font-family: "Resume Serif", Georgia, serif;
   font-weight: bold;
   font-size: 12pt;
   grid-template-columns: auto auto;
@@ -68,12 +92,12 @@ body {
 }
 
 .accomplishment {
-  font-family: Calibri, Arial, sans-serif;
+  font-family: "Resume Sans", Arial, sans-serif;
   font-size: 12pt;
 }
 
 .job {
-  font-family: Calibri, Arial, sans-serif;
+  font-family: "Resume Sans", Arial, sans-serif;
   font-size: 12pt;
   font-weight: bold;
 }
@@ -86,7 +110,7 @@ body {
 
 .about {
   margin: 20px 10%;
-  font-family: Calibri, Arial, sans-serif;
+  font-family: "Resume Sans", Arial, sans-serif;
   font-size: 12pt;
 }
 
@@ -161,7 +185,7 @@ figure .chart p {
   top: 75px;
   width: 100%;
   text-align: center;
-  font-family: Calibri, Arial, sans-serif;
+  font-family: "Resume Sans", Arial, sans-serif;
   color: #fff;
   font-size: 12px;
   z-index: 100;
@@ -178,7 +202,7 @@ figure .chart .skill label {
   margin: 0 auto;
   transform: rotate(-50deg);
   white-space: nowrap;
-  font-family: Calibri, Arial, sans-serif;
+  font-family: "Resume Sans", Arial, sans-serif;
   font-size: 10pt;
 }
 figure .chart .skill .bar {

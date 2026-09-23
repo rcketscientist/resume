@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/rcketscientist/resume#readme",
   "devDependencies": {
+    "@fontsource/eb-garamond": "^5.3.0",
+    "@fontsource/roboto": "^5.3.0",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-sass": "^5.1.0",
