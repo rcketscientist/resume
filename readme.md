@@ -23,7 +23,7 @@ Github
     ```
   * `Just the push event`
 
-With this in place the website will be automatically updated when you push. The generated PDF is committed separately by the workflow, and the webhook pulls that commit onto the server. The hook accepts only signed pushes from this repository, deploys the exact `origin/master` state, prevents overlapping pulls, and does not expose command output. No Node.js, Chromium, PHP conversion dependency, or SSH access from GitHub is required.
+With this in place the website will be automatically updated when you push. The generated PDF is committed separately by the workflow, and the webhook pulls that commit onto the server. The hook accepts signed pushes from this repository in either JSON or form-encoded GitHub webhook format, deploys the exact `origin/master` state, prevents overlapping pulls, and does not expose command output. No Node.js, Chromium, PHP conversion dependency, or SSH access from GitHub is required.
 
 The deploy hook disables Git's ownership check only for its fixed deployment command, so it continues to work when the nginx container runs Git as a different user than the checkout owner without depending on a server-specific path or global Git configuration. It fetches and resets to `origin/master` explicitly, then logs the deployed commit and PDF metadata for troubleshooting.
 
