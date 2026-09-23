@@ -22,7 +22,7 @@ body {
 }
 
 .section {
-  font-family: Calibri;
+  font-family: Calibri, Arial, sans-serif;
   font-size: 14pt;
   font-weight: bold;
   border-bottom-style: double;
@@ -30,7 +30,7 @@ body {
 
 .heading {
   display: grid;
-  font-family: Garamond;
+  font-family: Garamond, Georgia, serif;
   font-weight: bold;
   font-size: 12pt;
   grid-template-columns: auto auto;
@@ -68,12 +68,12 @@ body {
 }
 
 .accomplishment {
-  font-family: Calibri;
+  font-family: Calibri, Arial, sans-serif;
   font-size: 12pt;
 }
 
 .job {
-  font-family: Calibri;
+  font-family: Calibri, Arial, sans-serif;
   font-size: 12pt;
   font-weight: bold;
 }
@@ -86,7 +86,7 @@ body {
 
 .about {
   margin: 20px 10%;
-  font-family: Calibri;
+  font-family: Calibri, Arial, sans-serif;
   font-size: 12pt;
 }
 
@@ -154,7 +154,7 @@ figure .chart p {
   top: 75px;
   width: 100%;
   text-align: center;
-  font-family: Calibri;
+  font-family: Calibri, Arial, sans-serif;
   color: #fff;
   font-size: 12px;
   z-index: 100;
@@ -171,7 +171,7 @@ figure .chart .skill label {
   margin: 0 auto;
   transform: rotate(-50deg);
   white-space: nowrap;
-  font-family: Calibri;
+  font-family: Calibri, Arial, sans-serif;
   font-size: 10pt;
 }
 figure .chart .skill .bar {
