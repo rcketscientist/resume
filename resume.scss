@@ -67,6 +67,25 @@ body {
     }
 }
 
+@media print {
+    body .section {
+        font-size: 10.5pt;
+    }
+
+    body .heading {
+        font-size: 9pt;
+
+        .left {
+            font-size: 20pt;
+        }
+    }
+
+    body .accomplishment,
+    body .job {
+        font-size: 9pt;
+    }
+}
+
 .section {
     font-family: "Resume Sans", Arial, sans-serif;
     font-size: 14pt;
@@ -194,6 +213,8 @@ figure {
             }
         }
 
+
+
         .legend {
             display: flex;
             flex-direction: row;
@@ -212,6 +233,8 @@ figure {
                 margin: 4px;
             }
         }
+
+
     }
 
     .graph-header {
