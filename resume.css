@@ -140,6 +140,7 @@ figure {
   figure {
     transform: scale(0.75);
     transform-origin: top center;
+    margin-bottom: 18px;
   }
 }
 figure .mastery {
