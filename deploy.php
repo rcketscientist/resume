@@ -40,7 +40,15 @@ if (!hash_equals($expectedSignature, $signature)) {
 }
 
 $payload = json_decode($body, true);
-if (!is_array($payload) || isset($payload['ref']) === false || $payload['ref'] !== 'refs/heads/master') {
+if (!is_array($payload)) {
+	error_log('Resume deployment ignored: invalid GitHub push payload');
+	respond(400);
+}
+
+if (!isset($payload['ref']) || $payload['ref'] !== 'refs/heads/master') {
+	$ref = isset($payload['ref']) ? $payload['ref'] : 'missing';
+	$repositoryName = isset($payload['repository']['full_name']) ? $payload['repository']['full_name'] : 'missing';
+	error_log('Resume deployment ignored: repository ' . $repositoryName . ', ref ' . $ref);
 	respond(202);
 }
 
