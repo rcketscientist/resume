@@ -97,6 +97,12 @@ figure {
   margin-right: auto;
   margin-bottom: 50px;
 }
+@media print {
+  figure {
+    transform: scale(0.75);
+    transform-origin: top center;
+  }
+}
 figure .mastery {
   background: white;
   list-style-type: none;

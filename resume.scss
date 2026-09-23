@@ -133,6 +133,11 @@ figure {
     margin-right: auto;
     margin-bottom: 50px;
 
+    @media print {
+        transform: scale(0.75);
+        transform-origin: top center;
+    }
+
     .mastery {
         background: white;
         list-style-type: none;
