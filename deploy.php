@@ -42,10 +42,14 @@ if (!hash_equals($expectedSignature, $signature)) {
 
 $payload = json_decode($body, true);
 if (!is_array($payload) && strpos(isset($_SERVER['CONTENT_TYPE']) ? $_SERVER['CONTENT_TYPE'] : '', 'application/x-www-form-urlencoded') === 0) {
-	$form = array();
-	parse_str($body, $form);
-	if (isset($form['payload'])) {
-		$payload = json_decode($form['payload'], true);
+	$encodedPayload = isset($_POST['payload']) ? $_POST['payload'] : null;
+	if ($encodedPayload === null) {
+		$form = array();
+		parse_str($body, $form);
+		$encodedPayload = isset($form['payload']) ? $form['payload'] : null;
+	}
+	if ($encodedPayload !== null) {
+		$payload = json_decode($encodedPayload, true);
 	}
 }
 
