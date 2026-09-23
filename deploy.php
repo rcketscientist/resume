@@ -1,5 +1,6 @@
 <?php
 const SECRET_FILE = '/var/secure/github-webhook.php';
+const REPOSITORY_NAME = 'rcketscientist/resume';
 
 function respond($statusCode) {
 	http_response_code($statusCode);
@@ -45,7 +46,7 @@ if (!is_array($payload)) {
 	respond(400);
 }
 
-if (!isset($payload['ref']) || $payload['ref'] !== 'refs/heads/master') {
+if (!isset($payload['repository']['full_name']) || $payload['repository']['full_name'] !== REPOSITORY_NAME) {
 	$ref = isset($payload['ref']) ? $payload['ref'] : 'missing';
 	$repositoryName = isset($payload['repository']['full_name']) ? $payload['repository']['full_name'] : 'missing';
 	error_log('Resume deployment ignored: repository ' . $repositoryName . ', ref ' . $ref);
