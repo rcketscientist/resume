@@ -1,6 +1,5 @@
 <?php
 const SECRET_FILE = '/var/secure/github-webhook.php';
-const LEGACY_SECRET_FILE = '/var/secure/convertapiKey.php';
 
 function respond($statusCode) {
 	http_response_code($statusCode);
@@ -12,13 +11,6 @@ function loadWebhookSecret() {
 		require SECRET_FILE;
 		if (isset($githubWebhookSecret) && $githubWebhookSecret !== '') {
 			return $githubWebhookSecret;
-		}
-	}
-
-	if (is_file(LEGACY_SECRET_FILE)) {
-		require LEGACY_SECRET_FILE;
-		if (isset($convertapiKey) && $convertapiKey !== '') {
-			return $convertapiKey;
 		}
 	}
 

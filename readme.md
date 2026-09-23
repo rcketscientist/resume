@@ -21,7 +21,6 @@ Github
     $githubWebhookSecret = 'yourRandomSecret';
     ?>
     ```
-  * During migration, the hook temporarily falls back to the existing `$convertapiKey` in `/var/secure/convertapiKey.php` if the new file does not exist. Set the GitHub webhook secret to that existing value, then replace it with a dedicated webhook secret.
   * `Just the push event`
 
 With this in place the website will be automatically updated when you push. The generated PDF is committed separately by the workflow, and the webhook pulls that commit onto the server. The hook accepts only signed pushes to `master`, prevents overlapping pulls, and does not expose command output. No Node.js, Chromium, PHP conversion dependency, or SSH access from GitHub is required.
