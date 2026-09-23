@@ -1,9 +1,28 @@
 <?php
 const SECRET_FILE = '/var/secure/github-webhook.php';
+const LEGACY_SECRET_FILE = '/var/secure/convertapiKey.php';
 
 function respond($statusCode) {
 	http_response_code($statusCode);
 	exit;
+}
+
+function loadWebhookSecret() {
+	if (is_file(SECRET_FILE)) {
+		require SECRET_FILE;
+		if (isset($githubWebhookSecret) && $githubWebhookSecret !== '') {
+			return $githubWebhookSecret;
+		}
+	}
+
+	if (is_file(LEGACY_SECRET_FILE)) {
+		require LEGACY_SECRET_FILE;
+		if (isset($convertapiKey) && $convertapiKey !== '') {
+			return $convertapiKey;
+		}
+	}
+
+	return null;
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -14,16 +33,16 @@ $event = isset($_SERVER['HTTP_X_GITHUB_EVENT']) ? $_SERVER['HTTP_X_GITHUB_EVENT'
 $signature = isset($_SERVER['HTTP_X_HUB_SIGNATURE_256']) ? $_SERVER['HTTP_X_HUB_SIGNATURE_256'] : '';
 $body = file_get_contents('php://input');
 
-if ($event !== 'push' || strpos($signature, 'sha256=') !== 0 || !is_file(SECRET_FILE)) {
+if ($event !== 'push' || strpos($signature, 'sha256=') !== 0) {
 	respond(400);
 }
 
-require SECRET_FILE;
-if (!isset($githubWebhookSecret) || $githubWebhookSecret === '') {
+$webhookSecret = loadWebhookSecret();
+if ($webhookSecret === null) {
 	respond(500);
 }
 
-$expectedSignature = 'sha256=' . hash_hmac('sha256', $body, $githubWebhookSecret);
+$expectedSignature = 'sha256=' . hash_hmac('sha256', $body, $webhookSecret);
 if (!hash_equals($expectedSignature, $signature)) {
 	respond(401);
 }
@@ -50,7 +69,7 @@ flock($lock, LOCK_UN);
 fclose($lock);
 
 if ($exitCode !== 0) {
-	error_log('Resume deployment failed: git pull exited with code ' . $exitCode);
+	error_log('Resume deployment failed: git pull exited with code ' . $exitCode . ': ' . implode("\n", $output));
 	respond(500);
 }
 
