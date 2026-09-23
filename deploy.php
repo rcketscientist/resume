@@ -53,8 +53,8 @@ if ($lock === false || !flock($lock, LOCK_EX | LOCK_NB)) {
 }
 
 $repository = __DIR__;
-$safeDirectory = escapeshellarg($repository);
-$git = 'git -c safe.directory=' . $safeDirectory . ' -C ' . $safeDirectory;
+$repositoryArgument = escapeshellarg($repository);
+$git = 'git -c safe.directory=* -C ' . $repositoryArgument;
 $command = $git . ' fetch --prune origin master && ' . $git . ' reset --hard origin/master 2>&1';
 $output = array();
 $exitCode = 0;
