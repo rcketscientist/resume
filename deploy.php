@@ -1,25 +1,58 @@
 <?php
-// Forked from https://gist.github.com/1809044
-// Available from https://gist.github.com/nichtich/5290675#file-deploy-php
+const SECRET_FILE = '/var/secure/github-webhook.php';
 
-// Actually run the update
-$commands = array(
-	'echo $PWD',
-	'whoami',
-	'git pull',
-	'git status'
-);
-$output = "\n";
-$log = "####### ".date('Y-m-d H:i:s'). " #######\n";
-foreach($commands AS $command){
-    // Run it
-    $tmp = shell_exec("$command 2>&1");
-    // Output
-    $output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
-    $output .= htmlentities(trim($tmp)) . "\n";
-    $log  .= "\$ $command\n".trim($tmp)."\n";
+function respond($statusCode) {
+	http_response_code($statusCode);
+	exit;
 }
-$log .= "\n";
-file_put_contents ('deploy-log.txt',$log,FILE_APPEND);
-echo $output; 
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+	respond(405);
+}
+
+$event = isset($_SERVER['HTTP_X_GITHUB_EVENT']) ? $_SERVER['HTTP_X_GITHUB_EVENT'] : '';
+$signature = isset($_SERVER['HTTP_X_HUB_SIGNATURE_256']) ? $_SERVER['HTTP_X_HUB_SIGNATURE_256'] : '';
+$body = file_get_contents('php://input');
+
+if ($event !== 'push' || strpos($signature, 'sha256=') !== 0 || !is_file(SECRET_FILE)) {
+	respond(400);
+}
+
+require SECRET_FILE;
+if (!isset($githubWebhookSecret) || $githubWebhookSecret === '') {
+	respond(500);
+}
+
+$expectedSignature = 'sha256=' . hash_hmac('sha256', $body, $githubWebhookSecret);
+if (!hash_equals($expectedSignature, $signature)) {
+	respond(401);
+}
+
+$payload = json_decode($body, true);
+if (!is_array($payload) || isset($payload['ref']) === false || $payload['ref'] !== 'refs/heads/master') {
+	respond(202);
+}
+
+$lock = fopen(sys_get_temp_dir() . '/resume-deploy.lock', 'c');
+if ($lock === false || !flock($lock, LOCK_EX | LOCK_NB)) {
+	if (is_resource($lock)) {
+		fclose($lock);
+	}
+	respond(409);
+}
+
+$repository = __DIR__;
+$command = 'git -C ' . escapeshellarg($repository) . ' pull --ff-only origin master 2>&1';
+$output = array();
+$exitCode = 0;
+exec($command, $output, $exitCode);
+flock($lock, LOCK_UN);
+fclose($lock);
+
+if ($exitCode !== 0) {
+	error_log('Resume deployment failed: git pull exited with code ' . $exitCode);
+	respond(500);
+}
+
+respond(204);
 ?>

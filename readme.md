@@ -15,10 +15,15 @@ Server
 Github
 1. Setup webhook
   * `Payload URL`: "http://your_site/deploy.php"
-  * No need for a secret
+  * Set a random webhook secret and store the same value in `/var/secure/github-webhook.php`:
+    ```php
+    <?php
+    $githubWebhookSecret = 'yourRandomSecret';
+    ?>
+    ```
   * `Just the push event`
 
-With this in place the website will be automatically updated when you push. The generated PDF is committed separately by the workflow, and the webhook pulls that commit onto the server. No Node.js, Chromium, PHP conversion dependency, or SSH access from GitHub is required.
+With this in place the website will be automatically updated when you push. The generated PDF is committed separately by the workflow, and the webhook pulls that commit onto the server. The hook accepts only signed pushes to `master`, prevents overlapping pulls, and does not expose command output. No Node.js, Chromium, PHP conversion dependency, or SSH access from GitHub is required.
 
 # Development
 1. `npx gulp watch` (or npm -g gulp) to automatically update css
