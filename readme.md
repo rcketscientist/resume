@@ -25,7 +25,7 @@ Github
 
 With this in place the website will be automatically updated when you push. The generated PDF is committed separately by the workflow, and the webhook pulls that commit onto the server. The hook accepts only signed pushes to `master`, prevents overlapping pulls, and does not expose command output. No Node.js, Chromium, PHP conversion dependency, or SSH access from GitHub is required.
 
-The deploy hook passes the checkout path as an explicit Git `safe.directory` value so it continues to work when the nginx container runs Git as a different user than the checkout owner.
+The deploy hook passes the checkout path as an explicit Git `safe.directory` value so it continues to work when the nginx container runs Git as a different user than the checkout owner. It fetches and resets to `origin/master` explicitly, then logs the deployed commit and PDF metadata for troubleshooting.
 
 # Development
 1. `npx gulp watch` (or npm -g gulp) to automatically update css

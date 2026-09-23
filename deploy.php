@@ -54,7 +54,8 @@ if ($lock === false || !flock($lock, LOCK_EX | LOCK_NB)) {
 
 $repository = __DIR__;
 $safeDirectory = escapeshellarg($repository);
-$command = 'git -c safe.directory=' . $safeDirectory . ' -C ' . $safeDirectory . ' pull --ff-only origin master 2>&1';
+$git = 'git -c safe.directory=' . $safeDirectory . ' -C ' . $safeDirectory;
+$command = $git . ' fetch --prune origin master && ' . $git . ' reset --hard origin/master 2>&1';
 $output = array();
 $exitCode = 0;
 exec($command, $output, $exitCode);
@@ -62,9 +63,14 @@ flock($lock, LOCK_UN);
 fclose($lock);
 
 if ($exitCode !== 0) {
-	error_log('Resume deployment failed: git pull exited with code ' . $exitCode . ': ' . implode("\n", $output));
+	error_log('Resume deployment failed: git fetch/reset exited with code ' . $exitCode . ': ' . implode("\n", $output));
 	respond(500);
 }
+
+$head = trim(shell_exec($git . ' rev-parse HEAD 2>&1'));
+$pdf = $repository . '/resumeMandra.pdf';
+$pdfDetails = is_file($pdf) ? filesize($pdf) . ' bytes, ' . date('c', filemtime($pdf)) : 'missing';
+error_log('Resume deployment succeeded: ' . $repository . ' at ' . $head . '; resumeMandra.pdf ' . $pdfDetails);
 
 respond(204);
 ?>
