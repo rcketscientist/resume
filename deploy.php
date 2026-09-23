@@ -53,7 +53,8 @@ if ($lock === false || !flock($lock, LOCK_EX | LOCK_NB)) {
 }
 
 $repository = __DIR__;
-$command = 'git -C ' . escapeshellarg($repository) . ' pull --ff-only origin master 2>&1';
+$safeDirectory = escapeshellarg($repository);
+$command = 'git -c safe.directory=' . $safeDirectory . ' -C ' . $safeDirectory . ' pull --ff-only origin master 2>&1';
 $output = array();
 $exitCode = 0;
 exec($command, $output, $exitCode);
